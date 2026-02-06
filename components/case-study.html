@@ -1,475 +1,455 @@
-<section class="pt-8 pb-16 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24">
-    <div class="container mx-auto px-4 lg:px-8">
+<section class="pt-6 pb-12 md:pt-10 md:pb-16 lg:pt-12 lg:pb-20 overflow-hidden transition-all duration-700 ease-in-out rounded-3xl relative" id="case-study-section">
+    <div class="container mx-auto px-4 lg:px-8 xl:px-12 relative z-10">
         <!-- Section Title -->
-       <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-[48px] font-semibold leading-tight lg:leading-[60px] tracking-[-1px] sm:tracking-[-1.92px] text-center mb-10 sm:mb-16 lg:mb-20">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] font-semibold leading-tight lg:leading-[60px] tracking-[-1px] sm:tracking-[-1.92px] text-center mb-8 sm:mb-12 lg:mb-14">
             Our Success <span class="text-primary">Stories</span>
         </h2>
-        <!-- <p class="text-gray text-center max-w-2xl mx-auto mb-16">
-            From startups to enterprises, we've launched 50+ mobile apps across iOS and Android with millions of downloads.
-        </p> -->
 
-        <!-- Case Study Cards Carousel -->
-        <div class="relative pb-20 sm:pb-24 overflow-hidden" id="app-carousel-wrapper" style="overflow-x: clip; overflow-y: visible;">
-            <!-- Navigation Arrows - Visible on all screen sizes -->
-            <button id="app-prev-arrow" class="flex absolute left-1 sm:left-2 lg:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 bg-primary hover:bg-primary-dark text-white rounded-full items-center justify-center shadow-lg transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110">
-                <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- 3D Coverflow Carousel -->
+        <div class="relative pb-16 sm:pb-18 lg:pb-20" id="coverflow-wrapper" style="perspective: 2000px; perspective-origin: center;">
+            <!-- Navigation Arrows -->
+            <button id="coverflow-prev" class="flex absolute left-2 sm:left-4 lg:left-12 xl:left-16 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary hover:bg-primary-dark text-white rounded-full items-center justify-center shadow-lg transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110">
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
             </button>
-            <button id="app-next-arrow" class="flex absolute right-1 sm:right-2 lg:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 lg:w-14 lg:h-14 bg-primary hover:bg-primary-dark text-white rounded-full items-center justify-center shadow-lg transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110">
-                <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button id="coverflow-next" class="flex absolute right-2 sm:right-4 lg:right-12 xl:right-16 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-primary hover:bg-primary-dark text-white rounded-full items-center justify-center shadow-lg transition-all duration-300 opacity-90 hover:opacity-100 hover:scale-110">
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
             </button>
 
             <!-- Progress Indicator -->
-            <div id="app-carousel-progress" class="absolute bottom-2 sm:bottom-4 lg:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 sm:gap-2 lg:gap-3"></div>
+            <div id="coverflow-progress" class="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 lg:gap-3"></div>
 
-            <div class="flex gap-3 lg:gap-4 app-case-study-carousel" id="app-carousel-track">
-                <!-- CTA Card -->
-                <div class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl border-2 border-primary border-dashed p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center bg-gray-light">
-                    <img src="./assets/cta-vector.svg" alt="Start Your App" class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] lg:w-[200px] lg:h-[200px] mb-2 sm:mb-3 lg:mb-4">
-                    <h4 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-1 sm:mb-2 lg:mb-3">Your App Idea Starts Here</h4>
-                    <p class="text-gray text-xs mb-2 sm:mb-3 lg:mb-4 px-2">Join 50+ businesses that launched successful mobile apps with GlideUps</p>
-                    <a href="#contact-section" class="border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white px-4 sm:px-5 lg:px-6 py-1.5 sm:py-2 rounded-full transition-all duration-300 text-sm lg:text-base">Get Free Quote</a>
-                </div>
-
-                <!-- Case Study Card 1: Artify -->
-                <a href="./case-studies/case-study-detail.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="https://res.cloudinary.com/dvf7uywcp/image/upload/v1767171376/artify_new_whp64a.svg" alt="Artify" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Social</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">Artify</h4>
-                        <p class="text-white/80 text-sm mb-3">Digital Art Marketplace</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Flutter</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Case Study Card 2: Vapix -->
-                <a href="./case-studies/case-study-nimbus.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="https://res.cloudinary.com/dvf7uywcp/image/upload/v1767167693/cs2_xbaq4l.svg" alt="Vapix" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">E-Commerce</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">Vapix</h4>
-                        <p class="text-white/80 text-sm mb-3">Smart Shopping Experience</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Flutter</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Case Study Card 3: My Share -->
-                <a href="./case-studies/case-study-myshare.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="./assets/home/cs3.svg" alt="My Share" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Health & Fitness</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">My Share</h4>
-                        <p class="text-white/80 text-sm mb-3">Fitness Tracking & Wellness</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Flutter</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Case Study Card 4: Prospera -->
-                <a href="./case-studies/case-study-prospera.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="https://res.cloudinary.com/dvf7uywcp/image/upload/v1767167686/cs4_tg39en.svg" alt="Prospera" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">CleanTech</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">Prospera</h4>
-                        <p class="text-white/80 text-sm mb-3">Carbon Registry Platform</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Web App</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">React</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Node.js</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                 <a href="./case-studies/case-study-collabify.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="./assets/home/cs5.svg" alt="Collabify" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Social</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">Collabify</h4>
-                        <p class="text-white/80 text-sm mb-3">Team Collaboration Platform</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Flutter</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Duplicate Cards for Infinite Scroll -->
-                <div class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl border-2 border-primary border-dashed p-4 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center bg-gray-light">
-                    <img src="./assets/cta-vector.svg" alt="Start Your App" class="w-[100px] h-[100px] sm:w-[140px] sm:h-[140px] lg:w-[200px] lg:h-[200px] mb-2 sm:mb-3 lg:mb-4">
-                    <h4 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-1 sm:mb-2 lg:mb-3">Your App Idea Starts Here</h4>
-                    <p class="text-gray text-xs mb-2 sm:mb-3 lg:mb-4 px-2">Join 50+ businesses that launched successful mobile apps with GlideUps</p>
-                    <a href="#contact-section" class="border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white px-4 sm:px-5 lg:px-6 py-1.5 sm:py-2 rounded-full transition-all duration-300 text-sm lg:text-base">Get Free Quote</a>
-                </div>
-
-            
-
-                <a href="./case-studies/case-study-detail.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="https://res.cloudinary.com/dvf7uywcp/image/upload/v1767171376/artify_new_whp64a.svg" alt="Artify" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Social</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">Artify</h4>
-                        <p class="text-white/80 text-sm mb-3">Digital Art Marketplace</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Flutter</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="./case-studies/case-study-nimbus.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="https://res.cloudinary.com/dvf7uywcp/image/upload/v1767167693/cs2_xbaq4l.svg" alt="Vapix" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">E-Commerce</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">Vapix</h4>
-                        <p class="text-white/80 text-sm mb-3">Smart Shopping Experience</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Native</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="./case-studies/case-study-myshare.php" class="app-carousel-card w-[calc(100vw-2rem)] sm:w-[340px] lg:min-w-[437px] h-[280px] sm:h-[360px] lg:h-[398px] flex-shrink-0 rounded-2xl lg:rounded-3xl overflow-hidden relative block">
-                    <img src="./assets/home/cs3.svg" alt="My Share" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div class="absolute top-4 left-4">
-                        <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Health & Fitness</span>
-                    </div>
-                    <div class="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4">
-                        <h4 class="text-white text-xl font-semibold mb-1">My Share</h4>
-                        <p class="text-white/80 text-sm mb-3">Fitness Tracking & Wellness</p>
-                        <div class="flex items-center justify-between gap-2">
-                            <div class="flex gap-2">
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">iOS</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Android</span>
-                                <span class="bg-white/20 text-white text-xs px-2 py-1 rounded">Flutter</span>
-                            </div>
-                            <span class="w-10 h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-white flex items-center justify-center p-2 lg:p-3">
-                                <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 lg:w-[30px] lg:h-[30px] rotate-90">
-                            </span>
-                        </div>
-                    </div>
-                </a>
+            <!-- Coverflow Container -->
+            <div class="relative h-[350px] sm:h-[420px] lg:h-[480px] xl:h-[520px] flex items-center justify-center overflow-visible" id="coverflow-container" style="transform-style: preserve-3d; will-change: transform;">
+                <!-- Cards will be generated by JavaScript -->
             </div>
         </div>
-
-        <!-- Stats Row -->
-        <!-- <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-12 border-t border-gray-200">
-            <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-primary mb-2">50+</div>
-                <div class="text-gray text-sm">Apps Launched</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-primary mb-2">2M+</div>
-                <div class="text-gray text-sm">Total Downloads</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-primary mb-2">4.8</div>
-                <div class="text-gray text-sm">Avg. Store Rating</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-primary mb-2">98%</div>
-                <div class="text-gray text-sm">Client Satisfaction</div>
-            </div>
-        </div> -->
     </div>
+
+    <!-- Background Layer -->
+    <div class="absolute inset-0 -z-10 bg-gray-50 rounded-3xl"></div>
 </section>
 
-<!-- GSAP Scripts -->
+<!-- CSS Styles for 3D Coverflow -->
+<style>
+/* Section styling with blurred background */
+#case-study-section {
+    position: relative;
+    isolation: isolate;
+}
+
+.coverflow-card {
+    position: absolute;
+    width: 280px;
+    height: 380px;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    will-change: transform;
+}
+
+.coverflow-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 640px) {
+    .coverflow-card {
+        width: 320px;
+        height: 420px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .coverflow-card {
+        width: 400px;
+        height: 520px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .coverflow-card {
+        width: 420px;
+        height: 560px;
+    }
+}
+
+.coverflow-card.active {
+    z-index: 10;
+    transform: translate3d(0, 0, 0) scale(1.05);
+    filter: none;
+    box-shadow: 0 25px 70px rgba(29, 191, 115, 0.3), 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.coverflow-card.left-1 {
+    z-index: 9;
+    transform: translate3d(-45%, 0, -80px) rotateY(30deg) scale(0.88);
+    filter: brightness(0.88);
+}
+
+.coverflow-card.left-2 {
+    z-index: 8;
+    transform: translate3d(-85%, 0, -150px) rotateY(40deg) scale(0.78);
+    filter: brightness(0.75);
+    opacity: 0.6;
+}
+
+.coverflow-card.right-1 {
+    z-index: 9;
+    transform: translate3d(45%, 0, -80px) rotateY(-30deg) scale(0.88);
+    filter: brightness(0.88);
+}
+
+.coverflow-card.right-2 {
+    z-index: 8;
+    transform: translate3d(85%, 0, -150px) rotateY(-40deg) scale(0.78);
+    filter: brightness(0.75);
+    opacity: 0.6;
+}
+
+/* Desktop optimizations */
+@media (min-width: 1024px) {
+    .coverflow-card.active {
+        transform: none;
+    }
+
+    .coverflow-card.left-1 {
+        transform: translate3d(-18%, 0, -80px) rotateY(40deg) scale(0.92);
+    }
+
+    .coverflow-card.left-2 {
+        transform: translate3d(-32%, 0, -150px) rotateY(50deg) scale(0.82);
+        opacity: 0.5;
+    }
+
+    .coverflow-card.right-1 {
+        transform: translate3d(18%, 0, -80px) rotateY(-40deg) scale(0.92);
+    }
+
+    .coverflow-card.right-2 {
+        transform: translate3d(32%, 0, -150px) rotateY(-50deg) scale(0.82);
+        opacity: 0.5;
+    }
+}
+
+@media (min-width: 1280px) {
+    .coverflow-card.active {
+        transform: none;
+    }
+
+    .coverflow-card.left-1 {
+        transform: translate3d(-16%, 0, -80px) rotateY(42deg) scale(0.90);
+    }
+
+    .coverflow-card.left-2 {
+        transform: translate3d(-28%, 0, -150px) rotateY(52deg) scale(0.80);
+        opacity: 0.4;
+    }
+
+    .coverflow-card.right-1 {
+        transform: translate3d(16%, 0, -80px) rotateY(-42deg) scale(0.90);
+    }
+
+    .coverflow-card.right-2 {
+        transform: translate3d(28%, 0, -150px) rotateY(-52deg) scale(0.80);
+        opacity: 0.4;
+    }
+}
+
+.coverflow-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.coverflow-card-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.coverflow-progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.coverflow-progress-dot.active {
+    background: #1dbf73;
+    width: 32px;
+    border-radius: 5px;
+}
+
+@media (min-width: 1024px) {
+    .coverflow-progress-dot {
+        width: 12px;
+        height: 12px;
+    }
+
+    .coverflow-progress-dot.active {
+        width: 40px;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 640px) {
+    .coverflow-card.left-1 {
+        transform: translate3d(-35%, 0, -100px) rotateY(22deg) scale(0.88);
+    }
+
+    .coverflow-card.right-1 {
+        transform: translate3d(35%, 0, -100px) rotateY(-22deg) scale(0.88);
+    }
+
+    .coverflow-card.left-2,
+    .coverflow-card.right-2 {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .coverflow-card.active {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+</style>
+
+<!-- GSAP Scripts and Coverflow Logic -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('app-carousel-track');
-    const wrapper = document.getElementById('app-carousel-wrapper');
-    const cards = gsap.utils.toArray('.app-carousel-card');
-    const prevArrow = document.getElementById('app-prev-arrow');
-    const nextArrow = document.getElementById('app-next-arrow');
-    const progressContainer = document.getElementById('app-carousel-progress');
+    // Case Study Data
+    const caseStudies = [
+       
+         {
+            id: 'myshare',
+            title: 'My Share',
+            subtitle: 'Fitness Tracking & Wellness',
+            category: 'Health & Fitness',
+            image: './assets/casestudy/myshare/cs1.svg',
+            tags: ['iOS', 'Android', 'Flutter'],
+            link: './case-studies/case-study-myshare.php'
+        },
+        {
+            id: 'vapix',
+            title: 'Vapix',
+            subtitle: 'Smart Shopping Experience',
+            category: 'E-Commerce',
+            image: 'https://res.cloudinary.com/dvf7uywcp/image/upload/v1767167693/cs2_xbaq4l.svg',
+            tags: ['iOS', 'Android', 'Flutter'],
+            link: './case-studies/case-study-nimbus.php'
+        },
 
-    if (!track || cards.length === 0) return;
-
-    function getCardWidth() {
-        const screenWidth = window.innerWidth;
-        let baseWidth, gap;
-
-        if (screenWidth < 640) {
-            baseWidth = screenWidth - 32;
-            gap = 12;
-        } else if (screenWidth < 1024) {
-            baseWidth = 340;
-            gap = 12;
-        } else {
-            baseWidth = 437;
-            gap = 16;
+         {
+            id: 'artify',
+            title: 'Artify',
+            subtitle: 'Digital Art Marketplace',
+            category: 'Social',
+            image: './assets/casestudy/artify/csh5.svg',
+            tags: ['iOS', 'Android', 'Flutter'],
+            link: './case-studies/case-study-detail.php'
+        },
+       
+        {
+            id: 'prospera',
+            title: 'Prospera',
+            subtitle: 'Carbon Registry Platform',
+            category: 'CleanTech',
+            image: './assets/casestudy/prospera/cs5.svg',
+            tags: ['Web App', 'React', 'Node.js'],
+            link: './case-studies/case-study-prospera.php'
+        },
+        {
+            id: 'collabify',
+            title: 'Collabify',
+            subtitle: 'Team Collaboration Platform',
+            category: 'Social',
+            image: './assets/home/cs5.svg',
+            tags: ['iOS', 'Android', 'Flutter'],
+            link: './case-studies/case-study-collabify.php'
+        },
+        {
+            id: 'cta',
+            type: 'cta',
+            title: 'Your App Idea Starts Here',
+            description: 'Join 50+ businesses that launched successful mobile apps with GlideUps',
+            image: './assets/cta-vector.svg',
+            link: '#contact-section'
         }
-        return baseWidth + gap;
-    }
+    ];
 
-    let cardWidth = getCardWidth();
-    const totalCards = cards.length / 2;
-    let totalWidth = cardWidth * totalCards;
+    const container = document.getElementById('coverflow-container');
+    const progressContainer = document.getElementById('coverflow-progress');
+    const prevBtn = document.getElementById('coverflow-prev');
+    const nextBtn = document.getElementById('coverflow-next');
 
-    window.addEventListener('resize', () => {
-        cardWidth = getCardWidth();
-        totalWidth = cardWidth * totalCards;
+    let currentIndex = 2; // Start with third item (My Share)
+    const totalCards = caseStudies.length;
+
+    // Create Cards
+    caseStudies.forEach((study, index) => {
+        const card = document.createElement(study.type === 'cta' ? 'div' : 'a');
+        card.className = 'coverflow-card';
+        card.dataset.index = index;
+
+        if (study.type === 'cta') {
+            // CTA Card
+            card.innerHTML = `
+                <div class="w-full h-full border-2 border-primary border-dashed p-6 lg:p-8 flex flex-col items-center justify-center text-center bg-white">
+                    <img src="${study.image}" alt="${study.title}" class="w-32 h-32 lg:w-40 lg:h-40 mb-4">
+                    <h4 class="text-xl lg:text-2xl font-semibold mb-3">${study.title}</h4>
+                    <p class="text-gray text-sm mb-4 px-4">${study.description}</p>
+                    <a href="${study.link}" class="border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white px-6 py-2 rounded-full transition-all duration-300">Get Free Quote</a>
+                </div>
+            `;
+        } else {
+            // Case Study Card
+            card.href = study.link;
+            card.innerHTML = `
+                <img src="${study.image}" alt="${study.title}" class="w-full h-full object-cover">
+                <div class="coverflow-card-gradient"></div>
+                <div class="absolute top-4 left-4">
+                    <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">${study.category}</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 z-10 px-4 py-3 flex items-center justify-between">
+                    <div class="flex-1">
+                        <h4 class="text-gray-900 text-lg lg:text-xl font-bold mb-0.5 leading-tight">${study.title}</h4>
+                        <p class="text-gray-700 text-xs lg:text-sm font-medium leading-tight">${study.subtitle}</p>
+                    </div>
+                    <span class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-2">
+                        <img src="./assets/arrow-up.svg" alt="" class="w-4 h-4 lg:w-5 lg:h-5 rotate-90 brightness-0 invert">
+                    </span>
+                </div>
+            `;
+        }
+
+        // Click to navigate
+        card.addEventListener('click', (e) => {
+            if (index !== currentIndex && study.type !== 'cta') {
+                e.preventDefault();
+                currentIndex = index;
+                updateCarousel();
+            }
+        });
+
+        container.appendChild(card);
     });
 
-    // Create progress dots
+    // Create Progress Dots
     for (let i = 0; i < totalCards; i++) {
         const dot = document.createElement('div');
-        dot.className = 'app-progress-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gray-300 cursor-pointer transition-all duration-300';
+        dot.className = 'coverflow-progress-dot';
         dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateCarousel();
+        });
         progressContainer.appendChild(dot);
     }
 
-    const progressDots = progressContainer.querySelectorAll('.app-progress-dot');
+    const cards = container.querySelectorAll('.coverflow-card');
+    const dots = progressContainer.querySelectorAll('.coverflow-progress-dot');
 
-    function updateProgress() {
-        const currentPosition = Math.abs(gsap.getProperty(track, "x"));
-        const currentIndex = Math.floor((currentPosition % totalWidth) / cardWidth);
+    function updateCarousel() {
+        cards.forEach((card, index) => {
+            card.classList.remove('active', 'left-1', 'left-2', 'right-1', 'right-2', 'hidden');
 
-        progressDots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.remove('bg-gray-300', 'w-2', 'sm:w-3');
-                dot.classList.add('bg-primary', 'w-6', 'sm:w-8');
+            const diff = index - currentIndex;
+
+            if (diff === 0) {
+                card.classList.add('active');
+            } else if (diff === -1) {
+                card.classList.add('left-1');
+            } else if (diff === -2) {
+                card.classList.add('left-2');
+            } else if (diff === 1) {
+                card.classList.add('right-1');
+            } else if (diff === 2) {
+                card.classList.add('right-2');
             } else {
-                dot.classList.remove('bg-primary', 'w-6', 'sm:w-8');
-                dot.classList.add('bg-gray-300', 'w-2', 'sm:w-3');
+                card.classList.add('hidden');
+            }
+        });
+
+        // Update progress dots
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
             }
         });
     }
 
-    function navigateToCard(direction) {
-        const currentX = gsap.getProperty(track, "x");
-        let targetX = currentX + (direction * cardWidth);
+    // Navigation
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        updateCarousel();
+    });
 
-        if (targetX > 0) {
-            gsap.set(track, { x: -totalWidth });
-            targetX = -totalWidth + cardWidth;
-        } else if (targetX < -totalWidth) {
-            gsap.set(track, { x: 0 });
-            targetX = -cardWidth;
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateCarousel();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+            updateCarousel();
+        } else if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % totalCards;
+            updateCarousel();
         }
-
-        gsap.to(track, {
-            x: targetX,
-            duration: 0.8,
-            ease: "power2.inOut",
-            onUpdate: updateProgress
-        });
-    }
-
-    prevArrow.addEventListener('click', () => navigateToCard(1));
-    nextArrow.addEventListener('click', () => navigateToCard(-1));
-
-    progressDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            gsap.to(track, {
-                x: -(index * cardWidth),
-                duration: 0.8,
-                ease: "power2.inOut",
-                onUpdate: updateProgress
-            });
-        });
     });
 
-    // Card hover effects
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            gsap.to(card, {
-                scale: 1.02,
-                boxShadow: "0 20px 40px rgba(29, 191, 115, 0.3)",
-                duration: 0.3
-            });
-        });
-
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                scale: 1,
-                boxShadow: "0 0 0 rgba(29, 191, 115, 0)",
-                duration: 0.3
-            });
-        });
-    });
-
-    // Drag to scroll (Desktop)
-    let isDragging = false;
-    let startX, scrollLeft;
-
-    wrapper.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX - wrapper.offsetLeft;
-        scrollLeft = -gsap.getProperty(track, "x");
-        wrapper.style.cursor = 'grabbing';
-    });
-
-    wrapper.addEventListener('mouseleave', () => {
-        isDragging = false;
-        wrapper.style.cursor = 'grab';
-    });
-
-    wrapper.addEventListener('mouseup', () => {
-        isDragging = false;
-        wrapper.style.cursor = 'grab';
-        snapToCard();
-    });
-
-    wrapper.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - wrapper.offsetLeft;
-        const walk = (x - startX) * 2;
-        gsap.to(track, { x: -(scrollLeft - walk), duration: 0.1, ease: "none" });
-    });
-
-    // Touch support (Mobile) - Optimized for smooth scrolling
+    // Touch/Swipe support
     let touchStartX = 0;
-    let touchScrollLeft = 0;
-    let isTouching = false;
-    let lastTouchX = 0;
-    let velocity = 0;
+    let touchEndX = 0;
 
-    // Enable GPU acceleration
-    track.style.willChange = 'transform';
-
-    wrapper.addEventListener('touchstart', (e) => {
-        isTouching = true;
-        touchStartX = e.touches[0].clientX;
-        lastTouchX = touchStartX;
-        touchScrollLeft = -gsap.getProperty(track, "x");
-        velocity = 0;
-        // Kill any ongoing animation for immediate response
-        gsap.killTweensOf(track);
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
-    wrapper.addEventListener('touchmove', (e) => {
-        if (!isTouching) return;
-        const touchX = e.touches[0].clientX;
-        const walk = touchStartX - touchX;
-
-        // Track velocity for momentum
-        velocity = lastTouchX - touchX;
-        lastTouchX = touchX;
-
-        // Direct transform for instant response (no animation delay)
-        gsap.set(track, { x: -(touchScrollLeft + walk) });
+    container.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
     }, { passive: true });
 
-    wrapper.addEventListener('touchend', () => {
-        isTouching = false;
-
-        // Apply momentum based on velocity
-        const currentX = gsap.getProperty(track, "x");
-        const momentumX = currentX - (velocity * 5);
-
-        // Snap to nearest card with momentum
-        const targetCard = Math.round(Math.abs(momentumX) / cardWidth);
-        let targetX = -(targetCard * cardWidth);
-
-        // Handle boundaries
-        if (targetX > 0) targetX = 0;
-        if (targetX < -totalWidth) targetX = -totalWidth;
-
-        gsap.to(track, {
-            x: targetX,
-            duration: 0.4,
-            ease: "power2.out",
-            onUpdate: updateProgress
-        });
-    });
-
-    // Snap to nearest card after drag/swipe
-    function snapToCard() {
-        const currentX = Math.abs(gsap.getProperty(track, "x"));
-        const nearestCard = Math.round(currentX / cardWidth);
-        let targetX = -(nearestCard * cardWidth);
-
-        // Handle boundaries
-        if (targetX > 0) targetX = 0;
-        if (targetX < -totalWidth) targetX = -totalWidth;
-
-        gsap.to(track, {
-            x: targetX,
-            duration: 0.4,
-            ease: "power2.out",
-            onUpdate: updateProgress
-        });
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left
+            currentIndex = (currentIndex + 1) % totalCards;
+            updateCarousel();
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+            updateCarousel();
+        }
     }
 
-    wrapper.style.cursor = 'grab';
-    updateProgress();
+    // Initialize
+    updateCarousel();
+
+    // Optional: Auto-play (uncomment to enable)
+    // setInterval(() => {
+    //     currentIndex = (currentIndex + 1) % totalCards;
+    //     updateCarousel();
+    // }, 5000);
 });
 </script>
