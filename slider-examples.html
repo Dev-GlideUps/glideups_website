@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Examples - Multiple Libraries</title>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        h1 { text-align: center; margin-bottom: 20px; color: #1dbf73; font-size: 36px; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 50px; }
+        h2 { margin-bottom: 10px; color: #1dbf73; font-size: 22px; }
+        .library-tag {
+            display: inline-block;
+            background: #1dbf73;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .desc { color: #888; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+
+        /* Common Card Styles */
+        .card {
+            min-width: 300px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            flex-shrink: 0;
+            user-select: none;
+        }
+        .card:nth-child(2n) { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .card:nth-child(3n) { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .card:nth-child(4n) { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .card:nth-child(5n) { background: linear-gradient(135deg, #fa709a, #fee140); }
+        .card:nth-child(6n) { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+
+        /* ========== 1. Pure CSS Marquee ========== */
+        .css-marquee-container { overflow: hidden; }
+        .css-marquee-track {
+            display: flex;
+            gap: 20px;
+            animation: marquee 25s linear infinite;
+        }
+        .css-marquee-track:hover { animation-play-state: paused; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ========== 2. CSS Reverse Marquee ========== */
+        .css-reverse-track {
+            display: flex;
+            gap: 20px;
+            animation: marquee-reverse 25s linear infinite;
+        }
+        .css-reverse-track:hover { animation-play-state: paused; }
+        @keyframes marquee-reverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        /* ========== 3. GSAP Slider ========== */
+        .gsap-container { overflow: hidden; }
+        .gsap-track { display: flex; gap: 20px; cursor: grab; }
+        .gsap-track:active { cursor: grabbing; }
+
+        /* ========== 4. Swiper Styles ========== */
+        .swiper { width: 100%; padding: 20px 0; }
+        .swiper-slide { width: auto; }
+        .swiper .card { margin: 0; }
+
+        /* ========== 5. Splide Styles ========== */
+        .splide__slide .card { margin: 0 10px; }
+
+        /* ========== 6. Vanilla JS Drag ========== */
+        .vanilla-container { overflow: hidden; }
+        .vanilla-track { display: flex; gap: 20px; cursor: grab; }
+        .vanilla-track:active { cursor: grabbing; }
+
+        /* ========== 7. CSS 3D Carousel ========== */
+        .carousel-3d-container {
+            perspective: 1000px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-3d {
+            position: relative;
+            width: 300px;
+            height: 180px;
+            transform-style: preserve-3d;
+            animation: rotate3d 20s linear infinite;
+        }
+        .carousel-3d:hover { animation-play-state: paused; }
+        .carousel-3d .card {
+            position: absolute;
+            width: 300px;
+            height: 180px;
+            min-width: auto;
+            backface-visibility: hidden;
+        }
+        @keyframes rotate3d {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+
+        /* ========== 8. Anime.js Stagger ========== */
+        .anime-container { overflow: hidden; }
+        .anime-track { display: flex; gap: 20px; }
+
+        /* ========== 9. CSS Fade Slider ========== */
+        .fade-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .fade-slide {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeSlide 12s infinite;
+        }
+        .fade-slide:nth-child(1) { animation-delay: 0s; }
+        .fade-slide:nth-child(2) { animation-delay: 3s; }
+        .fade-slide:nth-child(3) { animation-delay: 6s; }
+        .fade-slide:nth-child(4) { animation-delay: 9s; }
+        @keyframes fadeSlide {
+            0%, 20% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+            25%, 45% { opacity: 1; transform: translateX(-50%) scale(1); }
+            50%, 100% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+        }
+
+        /* ========== 10. Two Row Opposite ========== */
+        .two-row-wrapper { display: flex; flex-direction: column; gap: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Slider & Carousel Examples</h1>
+    <p class="subtitle">Different libraries and animation styles</p>
+
+    <!-- 1. Pure CSS Marquee -->
+    <div class="section">
+        <h2>1. Pure CSS Infinite Marquee <span class="library-tag">CSS Only</span></h2>
+        <p class="desc">No JavaScript needed. Pure CSS animation. Pauses on hover. Cards duplicated for seamless loop.</p>
+        <div class="css-marquee-container">
+            <div class="css-marquee-track">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. CSS Reverse Marquee -->
+    <div class="section">
+        <h2>2. CSS Reverse Marquee <span class="library-tag">CSS Only</span></h2>
+        <p class="desc">Same as above but scrolls right to left. Good for second row.</p>
+        <div class="css-marquee-container">
+            <div class="css-reverse-track">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. GSAP Draggable -->
+    <div class="section">
+        <h2>3. GSAP Draggable <span class="library-tag">GSAP</span></h2>
+        <p class="desc">Drag to scroll with momentum. Professional feel with inertia.</p>
+        <div class="gsap-container" id="gsap-container">
+            <div class="gsap-track" id="gsap-track">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. GSAP Auto + Drag -->
+    <div class="section">
+        <h2>4. GSAP Auto-Scroll + Drag <span class="library-tag">GSAP</span></h2>
+        <p class="desc">Continuous auto-scroll. Drag to control. Resumes after release.</p>
+        <div class="gsap-container">
+            <div class="gsap-track" id="gsap-auto-track">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Swiper.js -->
+    <div class="section">
+        <h2>5. Swiper.js Slider <span class="library-tag">Swiper.js</span></h2>
+        <p class="desc">Popular slider library. Touch-friendly, responsive, many options.</p>
+        <div class="swiper" id="swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><div class="card">Card 1</div></div>
+                <div class="swiper-slide"><div class="card">Card 2</div></div>
+                <div class="swiper-slide"><div class="card">Card 3</div></div>
+                <div class="swiper-slide"><div class="card">Card 4</div></div>
+                <div class="swiper-slide"><div class="card">Card 5</div></div>
+                <div class="swiper-slide"><div class="card">Card 6</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Swiper.js Auto-play -->
+    <div class="section">
+        <h2>6. Swiper.js with Autoplay <span class="library-tag">Swiper.js</span></h2>
+        <p class="desc">Auto-plays continuously. Pauses on hover. Loop enabled.</p>
+        <div class="swiper" id="swiper2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><div class="card">Card 1</div></div>
+                <div class="swiper-slide"><div class="card">Card 2</div></div>
+                <div class="swiper-slide"><div class="card">Card 3</div></div>
+                <div class="swiper-slide"><div class="card">Card 4</div></div>
+                <div class="swiper-slide"><div class="card">Card 5</div></div>
+                <div class="swiper-slide"><div class="card">Card 6</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Splide.js -->
+    <div class="section">
+        <h2>7. Splide.js Slider <span class="library-tag">Splide.js</span></h2>
+        <p class="desc">Lightweight, accessible slider. Great performance.</p>
+        <div class="splide" id="splide1">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><div class="card">Card 1</div></li>
+                    <li class="splide__slide"><div class="card">Card 2</div></li>
+                    <li class="splide__slide"><div class="card">Card 3</div></li>
+                    <li class="splide__slide"><div class="card">Card 4</div></li>
+                    <li class="splide__slide"><div class="card">Card 5</div></li>
+                    <li class="splide__slide"><div class="card">Card 6</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Vanilla JS Drag -->
+    <div class="section">
+        <h2>8. Vanilla JS Drag <span class="library-tag">Vanilla JS</span></h2>
+        <p class="desc">No library needed. Pure JavaScript drag functionality.</p>
+        <div class="vanilla-container" id="vanilla-container">
+            <div class="vanilla-track" id="vanilla-track">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. CSS 3D Carousel -->
+    <div class="section">
+        <h2>9. CSS 3D Carousel <span class="library-tag">CSS Only</span></h2>
+        <p class="desc">3D rotating carousel effect. Pure CSS animation.</p>
+        <div class="carousel-3d-container">
+            <div class="carousel-3d" id="carousel3d">
+                <div class="card" style="transform: rotateY(0deg) translateZ(400px);">Card 1</div>
+                <div class="card" style="transform: rotateY(60deg) translateZ(400px);">Card 2</div>
+                <div class="card" style="transform: rotateY(120deg) translateZ(400px);">Card 3</div>
+                <div class="card" style="transform: rotateY(180deg) translateZ(400px);">Card 4</div>
+                <div class="card" style="transform: rotateY(240deg) translateZ(400px);">Card 5</div>
+                <div class="card" style="transform: rotateY(300deg) translateZ(400px);">Card 6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. CSS Fade Slider -->
+    <div class="section">
+        <h2>10. CSS Fade Slider <span class="library-tag">CSS Only</span></h2>
+        <p class="desc">Cards fade in and out. Good for testimonials or quotes.</p>
+        <div class="fade-container">
+            <div class="fade-slide"><div class="card">Testimonial 1</div></div>
+            <div class="fade-slide"><div class="card">Testimonial 2</div></div>
+            <div class="fade-slide"><div class="card">Testimonial 3</div></div>
+            <div class="fade-slide"><div class="card">Testimonial 4</div></div>
+        </div>
+    </div>
+
+    <!-- 11. Anime.js Stagger -->
+    <div class="section">
+        <h2>11. Anime.js Entrance Animation <span class="library-tag">Anime.js</span></h2>
+        <p class="desc">Staggered entrance animation. Click button to replay.</p>
+        <button onclick="replayAnime()" style="margin-bottom:20px; padding:10px 20px; background:#1dbf73; border:none; color:#fff; border-radius:8px; cursor:pointer;">Replay Animation</button>
+        <div class="anime-container">
+            <div class="anime-track" id="anime-track">
+                <div class="card anime-card">Card 1</div>
+                <div class="card anime-card">Card 2</div>
+                <div class="card anime-card">Card 3</div>
+                <div class="card anime-card">Card 4</div>
+                <div class="card anime-card">Card 5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. Two Rows Opposite -->
+    <div class="section">
+        <h2>12. Two Rows - Opposite Directions <span class="library-tag">CSS</span></h2>
+        <p class="desc">Perfect for testimonials. Two rows scrolling opposite ways.</p>
+        <div class="two-row-wrapper">
+            <div class="css-marquee-container">
+                <div class="css-marquee-track">
+                    <div class="card">Row 1 - Card 1</div>
+                    <div class="card">Row 1 - Card 2</div>
+                    <div class="card">Row 1 - Card 3</div>
+                    <div class="card">Row 1 - Card 4</div>
+                    <div class="card">Row 1 - Card 1</div>
+                    <div class="card">Row 1 - Card 2</div>
+                    <div class="card">Row 1 - Card 3</div>
+                    <div class="card">Row 1 - Card 4</div>
+                </div>
+            </div>
+            <div class="css-marquee-container">
+                <div class="css-reverse-track">
+                    <div class="card">Row 2 - Card 1</div>
+                    <div class="card">Row 2 - Card 2</div>
+                    <div class="card">Row 2 - Card 3</div>
+                    <div class="card">Row 2 - Card 4</div>
+                    <div class="card">Row 2 - Card 1</div>
+                    <div class="card">Row 2 - Card 2</div>
+                    <div class="card">Row 2 - Card 3</div>
+                    <div class="card">Row 2 - Card 4</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ============================================
+    // 3. GSAP Draggable
+    // ============================================
+    gsap.registerPlugin(Draggable);
+
+    (function() {
+        const track = document.getElementById('gsap-track');
+        const container = document.getElementById('gsap-container');
+        const bounds = -(track.scrollWidth - container.offsetWidth);
+
+        Draggable.create(track, {
+            type: 'x',
+            bounds: { minX: bounds, maxX: 0 },
+            edgeResistance: 0.65,
+            cursor: 'grab',
+            activeCursor: 'grabbing'
+        });
+    })();
+
+    // ============================================
+    // 4. GSAP Auto-Scroll + Drag
+    // ============================================
+    (function() {
+        const track = document.getElementById('gsap-auto-track');
+        const cards = track.querySelectorAll('.card');
+
+        // Clone cards
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
+
+        const cardWidth = 320;
+        const gap = 20;
+        const totalWidth = (cardWidth + gap) * cards.length;
+
+        let x = 0;
+        let isDragging = false;
+        let startX, dragX;
+
+        // Auto scroll
+        gsap.ticker.add(() => {
+            if (!isDragging) {
+                x -= 0.8;
+                if (x <= -totalWidth) x = 0;
+                gsap.set(track, { x: x });
+            }
+        });
+
+        // Drag
+        track.addEventListener('mousedown', e => {
+            isDragging = true;
+            startX = e.clientX;
+            dragX = x;
+            track.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            x = dragX + (e.clientX - startX);
+            while (x > 0) x -= totalWidth;
+            while (x < -totalWidth) x += totalWidth;
+            gsap.set(track, { x: x });
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            track.style.cursor = 'grab';
+        });
+    })();
+
+    // ============================================
+    // 5. Swiper.js Basic
+    // ============================================
+    new Swiper('#swiper1', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        freeMode: true,
+        grabCursor: true
+    });
+
+    // ============================================
+    // 6. Swiper.js Autoplay
+    // ============================================
+    new Swiper('#swiper2', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        loop: true,
+        freeMode: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false
+        },
+        speed: 5000
+    });
+
+    // ============================================
+    // 7. Splide.js
+    // ============================================
+    new Splide('#splide1', {
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        gap: '20px',
+        autoWidth: true,
+        drag: 'free',
+        pagination: false,
+        arrows: false
+    }).mount();
+
+    // ============================================
+    // 8. Vanilla JS Drag
+    // ============================================
+    (function() {
+        const track = document.getElementById('vanilla-track');
+        const container = document.getElementById('vanilla-container');
+        let isDown = false;
+        let startX, scrollX = 0, lastX = 0;
+
+        track.addEventListener('mousedown', e => {
+            isDown = true;
+            startX = e.pageX;
+            track.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', e => {
+            if (!isDown) return;
+            const walk = e.pageX - startX;
+            scrollX = lastX + walk;
+
+            // Bounds
+            const max = -(track.scrollWidth - container.offsetWidth);
+            scrollX = Math.max(max, Math.min(0, scrollX));
+
+            track.style.transform = `translateX(${scrollX}px)`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (!isDown) return;
+            isDown = false;
+            lastX = scrollX;
+            track.style.cursor = 'grab';
+        });
+
+        // Touch
+        track.addEventListener('touchstart', e => {
+            isDown = true;
+            startX = e.touches[0].pageX;
+        });
+        track.addEventListener('touchmove', e => {
+            if (!isDown) return;
+            const walk = e.touches[0].pageX - startX;
+            scrollX = lastX + walk;
+            const max = -(track.scrollWidth - container.offsetWidth);
+            scrollX = Math.max(max, Math.min(0, scrollX));
+            track.style.transform = `translateX(${scrollX}px)`;
+        });
+        track.addEventListener('touchend', () => {
+            isDown = false;
+            lastX = scrollX;
+        });
+    })();
+
+    // ============================================
+    // 11. Anime.js Stagger
+    // ============================================
+    function replayAnime() {
+        anime({
+            targets: '.anime-card',
+            translateX: [100, 0],
+            opacity: [0, 1],
+            scale: [0.5, 1],
+            easing: 'easeOutElastic(1, .5)',
+            duration: 1000,
+            delay: anime.stagger(150)
+        });
+    }
+    // Play on load
+    replayAnime();
+    </script>
+</body>
+</html>

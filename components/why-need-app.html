@@ -1,0 +1,176 @@
+<!-- Why You Need An App Section -->
+<section id="why-need-app-section" class="py-20 lg:py-28">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Section Title -->
+        <h2 id="why-need-title" class="text-4xl lg:text-5xl xl:text-[64px] font-semibold leading-tight lg:leading-[80px] tracking-[-2.56px] text-center mb-16 lg:mb-20">
+            Why <span class="text-primary">You Need An App</span><br>
+            For Your Business
+        </h2>
+
+        <!-- Feature Cards - Staggered Layout -->
+        <div class="relative max-w-[1200px] mx-auto" id="why-need-grid">
+            <div class="flex flex-col md:flex-row items-start justify-between gap-8 lg:gap-0">
+                <!-- Card 1: Reach Customers (Left - Top) -->
+                <div class="why-need-card text-center w-full md:w-[320px]">
+                    <div class="why-need-icon w-20 h-20 bg-dark rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0px_6px_12px_0px_rgba(0,0,0,0.16)]">
+                        <img src="assets/icons/Users.svg" alt="Users" class="w-10 h-10">
+                    </div>
+                    <div class="flex flex-col gap-[6px]">
+                        <h3 class="text-2xl font-semibold leading-[36px] tracking-[-0.96px] text-dark">
+                            Reach Customers Anytime
+                        </h3>
+                        <p class="text-[#707070] text-base leading-6 tracking-[-0.32px]">
+                            Your app lives in your customers' pockets. Send push notifications, offer personalized deals, and stay connected 24/7 wherever they go.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Build Customer Loyalty (Center - Lower) -->
+                <div class="why-need-card text-center w-full md:w-[320px] md:mt-[116px]">
+                    <div class="why-need-icon w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0px_6px_12px_0px_rgba(0,0,0,0.16)]">
+                        <img src="assets/icons/CrownSimple.svg" alt="Crown" class="w-10 h-10">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-2xl font-semibold leading-[36px] tracking-[-0.96px] text-dark">
+                            Build Customer Loyalty
+                        </h3>
+                        <p class="text-[#707070] text-base leading-6 tracking-[-0.32px]">
+                            Reward programs, exclusive content, and seamless user experience keep customers coming back. Apps have 3x higher retention than mobile web.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Boost Sales (Right - Top) -->
+                <div class="why-need-card text-center w-full md:w-[320px]">
+                    <div class="why-need-icon w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0px_6px_12px_0px_rgba(0,0,0,0.16)]">
+                        <img src="assets/icons/ChartBar.svg" alt="Chart" class="w-10 h-10">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-2xl font-semibold leading-[36px] tracking-[-0.96px] text-dark">
+                            Increase Revenue
+                        </h3>
+                        <p class="text-[#707070] text-base leading-6 tracking-[-0.32px]">
+                            Mobile apps convert 3x better than websites. One-tap checkout, saved payment info, and frictionless UX mean more sales and higher order values.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const title = document.getElementById('why-need-title');
+    const cards = gsap.utils.toArray('.why-need-card');
+    const icons = gsap.utils.toArray('.why-need-icon');
+
+    // Title animation
+    gsap.from(title, {
+        scrollTrigger: {
+            trigger: title,
+            start: 'top 85%',
+            once: true
+        },
+        y: 60,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+
+    // Cards staggered entrance
+    gsap.from(cards, {
+        scrollTrigger: {
+            trigger: '#why-need-grid',
+            start: 'top 80%',
+            once: true
+        },
+        y: 80,
+        opacity: 0,
+        scale: 0.9,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'back.out(1.4)'
+    });
+
+    // Icons entrance with rotation
+    icons.forEach((icon, index) => {
+        gsap.from(icon, {
+            scrollTrigger: {
+                trigger: icon,
+                start: 'top 85%',
+                once: true
+            },
+            scale: 0,
+            rotation: -180,
+            opacity: 0,
+            duration: 0.8,
+            delay: index * 0.15,
+            ease: 'elastic.out(1, 0.6)'
+        });
+
+        // Continuous floating animation
+        gsap.to(icon, {
+            y: -8,
+            duration: 2 + index * 0.3,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+    });
+
+    // Card hover effects
+    cards.forEach((card, index) => {
+        const icon = card.querySelector('.why-need-icon');
+        const svg = icon.querySelector('svg');
+
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                y: -15,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+
+            gsap.to(icon, {
+                scale: 1.15,
+                duration: 0.4,
+                ease: 'back.out(2)'
+            });
+
+            gsap.to(svg, {
+                rotation: 360,
+                scale: 1.1,
+                duration: 0.6,
+                ease: 'power2.out'
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                y: 0,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+
+            gsap.to(icon, {
+                scale: 1,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+
+            gsap.to(svg, {
+                rotation: 0,
+                scale: 1,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+        });
+    });
+});
+</script>

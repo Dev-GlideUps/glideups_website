@@ -1,0 +1,141 @@
+<!-- Real Estate Challenges Section -->
+<section class="py-20 lg:py-28 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Section Title -->
+        <h2 id="challenges-title" class="text-4xl lg:text-5xl xl:text-[48px] font-semibold leading-tight lg:leading-[60px] tracking-[-1.92px] text-center mb-16 lg:mb-20 text-dark">
+            <span class="text-primary">Challenges</span> The Real Estate<br>
+            Industry Faces
+        </h2>
+
+        <!-- Challenge Cards - 3 Column Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-[1200px] mx-auto" id="challenges-grid">
+            <!-- Card 1: Manual Process -->
+            <div class="challenge-card bg-[#F5F5F5] rounded-[24px] p-8 text-center hover:shadow-xl transition-all duration-300">
+                <div class="challenge-icon w-[80px] h-[80px] bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-3">Manual Process<br>Management</h3>
+                <p class="text-gray text-sm leading-relaxed">
+                    Struggling with spreadsheets and manual processes that slow down operations and increase errors in property management.
+                </p>
+            </div>
+
+            <!-- Card 2: Inefficient Lead -->
+            <div class="challenge-card bg-[#F5F5F5] rounded-[24px] p-8 text-center hover:shadow-xl transition-all duration-300">
+                <div class="challenge-icon w-[80px] h-[80px] bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-3">Inefficient Lead<br>Management</h3>
+                <p class="text-gray text-sm leading-relaxed">
+                    Losing potential clients due to poor lead tracking and follow-up systems that fail to nurture prospects effectively.
+                </p>
+            </div>
+
+            <!-- Card 3: Lack of Centralization -->
+            <div class="challenge-card bg-[#F5F5F5] rounded-[24px] p-8 text-center hover:shadow-xl transition-all duration-300">
+                <div class="challenge-icon w-[80px] h-[80px] bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-3">Lack of Centralized<br>Data</h3>
+                <p class="text-gray text-sm leading-relaxed">
+                    Information scattered across multiple platforms making it difficult to get actionable insights and analytics.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const title = document.getElementById('challenges-title');
+        const cards = gsap.utils.toArray('.challenge-card');
+        const icons = gsap.utils.toArray('.challenge-icon');
+
+        // Title animation
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                start: 'top 85%',
+                once: true
+            },
+            y: 60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        // Cards staggered entrance
+        gsap.from(cards, {
+            scrollTrigger: {
+                trigger: '#challenges-grid',
+                start: 'top 80%',
+                once: true
+            },
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out'
+        });
+
+        // Icons entrance with scale
+        icons.forEach((icon, index) => {
+            gsap.from(icon, {
+                scrollTrigger: {
+                    trigger: icon,
+                    start: 'top 85%',
+                    once: true
+                },
+                scale: 0,
+                opacity: 0,
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: 'back.out(1.7)'
+            });
+        });
+
+        // Card hover effects
+        cards.forEach((card) => {
+            const icon = card.querySelector('.challenge-icon');
+
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    y: -10,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+
+                gsap.to(icon, {
+                    scale: 1.1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    y: 0,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+
+                gsap.to(icon, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            });
+        });
+    }
+});
+</script>

@@ -1,0 +1,246 @@
+<style>
+/* Hide scrollbar for dropdown menus */
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Firefox */
+.dropdown-menu {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+</style>
+
+<!-- Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark/50 backdrop-blur-sm" id="mainNav">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <a href="index.php" class="flex-shrink-0">
+                <img src="assets/icons/Logo.svg" alt="GlideUps Logo" class="h-8 lg:h-10 w-auto">
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+                id="mobileMenuBtn"
+                class="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-8">
+                <ul class="flex items-center gap-8">
+                    <!-- Our Services Dropdown -->
+                    <li class="relative group">
+                        <button class="flex items-center gap-1 text-white text-base hover:text-primary transition-colors py-2">
+                            Our Services
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul class="absolute top-full left-0 mt-2 w-56 bg-dark/95 backdrop-blur-xl border border-white/20 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+                            <li><a href="services/app-development.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">App Development</a></li>
+                            <li><a href="services/website-development.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Website Development</a></li>
+                            <li><a href="services/ui-ux-design.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">UI/UX Design</a></li>
+                            <li><a href="services/custom-solutions.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Custom Solutions</a></li>
+                            <!-- <li><a href="services/nft-marketplace.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">NFT Marketplace</a></li> -->
+                            <!-- <li><a href="services/digital-marketing.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Digital Marketing</a></li> -->
+                        </ul>
+                    </li>
+
+                    <!-- Industries Dropdown -->
+                    <li class="relative group">
+                        <button class="flex items-center gap-1 text-white text-base hover:text-primary transition-colors py-2">
+                            Industries
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-dark/95 backdrop-blur-xl border border-white/20 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl max-h-96 overflow-y-auto">
+                            <li><a href="industries/real-estate.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Real Estate</a></li>
+                            <li><a href="industries/social-media.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Social Media</a></li>
+                            <li><a href="industries/ecommerce.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">E-Commerce</a></li>
+                            <li><a href="industries/ai.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">AI Solutions</a></li>
+                            <li><a href="industries/food.php" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Food Delivery</a></li>
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Health Care</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Banking</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Education</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Live Streaming</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Dating</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Taxi or Traveling</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Gym & Training</a></li> -->
+                            <!-- <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Medicine</a></li> -->
+                        </ul>
+                    </li>
+
+                    <!-- Our Products Dropdown - Coming Soon -->
+                    <!-- <li class="relative group">
+                        <button class="flex items-center gap-1 text-white text-base hover:text-primary transition-colors py-2">
+                            Our Products
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul class="absolute top-full left-0 mt-2 w-56 bg-dark/95 backdrop-blur-xl border border-white/20 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+                            <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Social Media App</a></li>
+                            <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">E-Commerce Platform</a></li>
+                            <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Food Delivery App</a></li>
+                            <li><a href="#" class="block px-4 py-3 text-white rounded-lg hover:bg-primary transition-colors">Real Estate CRM</a></li>
+                        </ul>
+                    </li> -->
+
+                    <!-- Portfolio -->
+                    <li>
+                        <a href="portfolio.php" class="text-white text-base hover:text-primary transition-colors">Portfolio</a>
+                    </li>
+
+                    <!-- AI Solutions -->
+                    <li>
+                        <a href="industries/ai.php" class="text-white text-base hover:text-primary transition-colors">AI Solutions</a>
+                    </li>
+
+                    <!-- About -->
+                    <li>
+                        <a href="about.php" class="text-white text-base hover:text-primary transition-colors">About</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button -->
+                <a href="#contact-section" class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                    <img src="assets/icons/calendar-dot.svg" alt="Calendar" class="w-5 h-5">
+                    <span>Book a Meeting</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden hidden bg-dark/98 backdrop-blur-lg rounded-xl mt-4 p-4 border border-white/10">
+            <ul class="space-y-2">
+                <!-- Mobile Our Services -->
+                <li>
+                    <button class="mobile-dropdown-btn w-full flex items-center justify-between text-white text-base py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                        Our Services
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-1">
+                        <li><a href="services/app-development.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">App Development</a></li>
+                        <li><a href="services/website-development.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">Website Development</a></li>
+                        <li><a href="services/ui-ux-design.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">UI/UX Design</a></li>
+                        <li><a href="services/custom-solutions.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">Custom Solutions</a></li>
+                    </ul>
+                </li>
+
+                <!-- Mobile Industries -->
+                <li>
+                    <button class="mobile-dropdown-btn w-full flex items-center justify-between text-white text-base py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                        Industries
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-1">
+                        <li><a href="industries/real-estate.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">Real Estate</a></li>
+                        <li><a href="industries/social-media.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">Social Media</a></li>
+                        <li><a href="industries/ecommerce.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">E-Commerce</a></li>
+                        <li><a href="industries/ai.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">AI Solutions</a></li>
+                        <li><a href="industries/food.php" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">Food Delivery</a></li>
+                    </ul>
+                </li>
+
+                <!-- Mobile Our Products - Coming Soon -->
+                <!-- <li>
+                    <button class="mobile-dropdown-btn w-full flex items-center justify-between text-white text-base py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                        Our Products
+                        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <ul class="mobile-dropdown-content hidden pl-4 mt-2 space-y-1">
+                        <li><a href="#" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">Social Media App</a></li>
+                        <li><a href="#" class="block text-white/80 py-2 px-4 rounded hover:bg-primary transition-colors">E-Commerce Platform</a></li>
+                    </ul>
+                </li> -->
+
+                <!-- Mobile Simple Links -->
+                <li><a href="portfolio.php" class="block text-white text-base py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">Portfolio</a></li>
+                <li><a href="industries/ai.php" class="block text-white text-base py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">AI Solutions</a></li>
+                <li><a href="about.php" class="block text-white text-base py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">About</a></li>
+
+                <!-- Mobile CTA -->
+                <li class="pt-4">
+                    <a href="#contact-section" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-all w-full">
+                        <img src="assets/icons/calendar-dot.svg" alt="Calendar" class="w-5 h-5">
+                        <span>Book a Meeting</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+// Mobile Menu Toggle and Navbar Scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+    const mainNav = document.getElementById('mainNav');
+
+    // Navbar scroll effect
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            mainNav.classList.add('bg-dark/95', 'backdrop-blur-lg', 'shadow-lg');
+        } else {
+            mainNav.classList.remove('bg-dark/95', 'backdrop-blur-lg', 'shadow-lg');
+        }
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check
+    handleScroll();
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // Mobile dropdown toggles
+    mobileDropdownBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('svg');
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+    });
+
+    // Close mobile menu when clicking a link
+    const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
+    mobileMenuLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+});
+</script>

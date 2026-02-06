@@ -1,0 +1,75 @@
+<!-- AI Models We Work With Section -->
+<section class="py-16 lg:py-24 bg-white overflow-hidden">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Section Title -->
+        <h2 class="text-4xl lg:text-5xl xl:text-[64px] font-semibold leading-tight lg:leading-[80px] tracking-[-2.56px] text-center mb-12 lg:mb-16 text-dark">
+            AI Models <span class="text-primary">We Work With</span>
+        </h2>
+    </div>
+
+    <!-- Models Slider -->
+    <div class="relative max-w-[900px] mx-auto overflow-hidden">
+        <!-- Fade Edge Left -->
+        <div class="absolute left-0 top-0 bottom-0 w-16 lg:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+        <!-- Fade Edge Right -->
+        <div class="absolute right-0 top-0 bottom-0 w-16 lg:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+        <div class="flex animate-scroll-models" id="ai-models-slider">
+            <!-- ChatGPT -->
+            <div class="flex items-center justify-center gap-4 flex-shrink-0 w-[300px] px-4">
+                <img src="assets/ai/gpt.svg" alt="ChatGPT" class="w-14 h-14 lg:w-[72px] lg:h-[72px]">
+                <span class="text-3xl lg:text-[40px] font-bold text-dark">ChatGPT</span>
+            </div>
+
+            <!-- LLaMA (Meta) -->
+            <div class="flex items-center justify-center gap-4 flex-shrink-0 w-[300px] px-4">
+                <img src="assets/ai/meta.svg" alt="LLaMA" class="w-14 h-14 lg:w-[72px] lg:h-[72px]">
+                <span class="text-3xl lg:text-[40px] font-bold text-dark">LLaMA</span>
+            </div>
+
+            <!-- Claude (Anthropic) -->
+            <div class="flex items-center justify-center gap-4 flex-shrink-0 w-[300px] px-4">
+                <img src="assets/ai/cluade.svg" alt="Claude" class="w-14 h-14 lg:w-[72px] lg:h-[72px]">
+                <span class="text-3xl lg:text-[40px] font-bold text-dark">Claude</span>
+            </div>
+
+            <!-- Duplicate for infinite scroll -->
+            <!-- ChatGPT -->
+            <div class="flex items-center justify-center gap-4 flex-shrink-0 w-[300px] px-4">
+                <img src="assets/ai/gpt.svg" alt="ChatGPT" class="w-14 h-14 lg:w-[72px] lg:h-[72px]">
+                <span class="text-3xl lg:text-[40px] font-bold text-dark">ChatGPT</span>
+            </div>
+
+            <!-- LLaMA (Meta) -->
+            <div class="flex items-center justify-center gap-4 flex-shrink-0 w-[300px] px-4">
+                <img src="assets/ai/meta.svg" alt="LLaMA" class="w-14 h-14 lg:w-[72px] lg:h-[72px]">
+                <span class="text-3xl lg:text-[40px] font-bold text-dark">LLaMA</span>
+            </div>
+
+            <!-- Claude (Anthropic) -->
+            <div class="flex items-center justify-center gap-4 flex-shrink-0 w-[300px] px-4">
+                <img src="assets/ai/cluade.svg" alt="Claude" class="w-14 h-14 lg:w-[72px] lg:h-[72px]">
+                <span class="text-3xl lg:text-[40px] font-bold text-dark">Claude</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes scroll-models {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll-models {
+    animation: scroll-models 15s linear infinite;
+}
+
+.animate-scroll-models:hover {
+    animation-play-state: paused;
+}
+</style>

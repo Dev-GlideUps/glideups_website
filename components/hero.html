@@ -1,0 +1,120 @@
+<!-- Hero Section -->
+<section class="min-h-screen relative overflow-hidden flex items-center pt-20">
+    <!-- Background Video -->
+    <div class="absolute inset-0 w-full h-full z-0">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover"
+            style="transform: scaleX(-1);">
+            <source src="./assets/3141210-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+    </div>
+
+    <!-- Decorative Vector -->
+    <div class="absolute top-1/2 right-[5%] -translate-y-1/2 w-[445px] h-[444px] bg-contain bg-center bg-no-repeat mix-blend-screen opacity-80 z-10 animate-float hidden lg:block"
+        style="background-image: url('./assets/hero-vector.svg');"></div>
+
+    <!-- Hero Content -->
+    <div class="container mx-auto px-4 lg:px-8 relative z-20 py-24">
+        <div class="flex items-center">
+            <div class="w-full lg:w-7/12">
+                <div class="max-w-[650px]">
+                    <!-- Main Heading -->
+                    <h1 id="hero-headline"
+                        class="text-5xl lg:text-6xl xl:text-[64px] font-semibold leading-tight lg:leading-[80px] tracking-[-2.56px] text-white mb-4 drop-shadow-lg">
+                        Glide Smoothly Towards 
+                        <span class="rotating-text-wrapper">
+                            <span class="rotating-text">Vision</span>
+                            <span class="rotating-text">Growth</span>
+                            <span class="rotating-text">Success</span>
+                        </span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-base leading-6 tracking-[-0.32px] text-white/95 mb-8 drop-shadow-md">
+                        Your business has big plans. We have the tech to make them happen. Cross-platform mobile apps,
+                        high-performance web solutions, rock-solid cloud deployment we handle the entire technical stack
+                        so you can focus on what matters: growth.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-3">
+                        <!-- Schedule Meeting Button -->
+                        <a href="#contact-section"
+                            class="flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-0.5">
+                            <img src="./assets/calendar-dot.svg" alt="Calendar" class="w-6 h-6">
+                            <span>Schedule a Meeting</span>
+                        </a>
+
+                        <!-- WhatsApp Button -->
+                        <a href="https://wa.me/923032298414"
+                            class="flex items-center gap-2 bg-white hover:bg-gray-50 text-primary font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+                            target="_blank">
+                            <img src="./assets/whatsapp-icon.svg" alt="WhatsApp" class="w-6 h-6">
+                            <span>Message on Whatsapp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden lg:block lg:w-5/12">
+                <!-- Space for hero image/illustration if needed -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Animation Styles - Pure CSS -->
+<style>
+    /* Rotating text animation */
+    .rotating-text-wrapper {
+        display: inline-block;
+        position: relative;
+        vertical-align: bottom;
+    }
+
+    .rotating-text {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        background: linear-gradient(135deg, #1dbf73 0%, #2dd492 50%, #17a560 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        white-space: nowrap;
+        animation: rotateWord 4.5s ease-in-out infinite;
+    }
+
+    /* First word sets the width */
+    .rotating-text:first-child {
+        position: relative;
+    }
+
+    /* Stagger each word */
+    .rotating-text:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .rotating-text:nth-child(2) {
+        animation-delay: 1.5s;
+    }
+    .rotating-text:nth-child(3) {
+        animation-delay: 3s;
+    }
+
+    @keyframes rotateWord {
+        0% {
+            opacity: 0;
+            transform: translateY(50%);
+        }
+        5%, 30% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        35%, 100% {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+    }
+</style>

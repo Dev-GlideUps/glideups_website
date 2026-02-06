@@ -1,0 +1,296 @@
+<!-- Why Choose Us Section -->
+<section id="why-choose-section" class="relative overflow-hidden rounded-t-[60px] pt-10 pb-20 lg:pt-10 lg:pb-20">
+    <!-- Background Image -->
+    <img id="why-choose-bg" src="./assets/why-choose-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none rounded-t-[60px]">
+
+    <div class="container mx-auto px-4 lg:px-8 xl:px-48 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Left: 3D Graphic -->
+            <div class="flex justify-center lg:justify-start flex-shrink-0">
+                <img id="why-3d-image" src="./assets/why-choose-3d.png" alt="Why Choose Us" class="w-[465px] h-[465px] object-contain">
+            </div>
+
+            <!-- Right: Content -->
+            <div class="max-w-[460px]">
+                <div class="mb-10">
+                    <h2 id="why-title" class="text-5xl lg:text-[64px] font-semibold leading-[80px] tracking-[-2.56px] text-dark mb-4">
+                        Why <span class="text-primary">Choose GlideUps</span>
+                    </h2>
+                    <p id="why-description" class="text-gray leading-6 tracking-[-0.32px]">
+                        We don't just build software — we build partnerships. With 100+ successful projects delivered, our team combines technical expertise with business acumen to create solutions that drive measurable results and long-term growth for your business.
+                    </p>
+                </div>
+
+                <!-- Features List -->
+                <div id="features-list" class="space-y-4 mb-10">
+                    <div class="feature-item flex items-center gap-3">
+                        <img class="feature-arrow w-6 h-6 flex-shrink-0 rotate-90" src="./assets/arrow-right-green.svg" alt="">
+                        <span class="text-2xl font-normal text-dark leading-9 tracking-[-0.96px]">100% On-Time Delivery Rate</span>
+                    </div>
+                    <div class="feature-item flex items-center gap-3">
+                        <img class="feature-arrow w-6 h-6 flex-shrink-0 rotate-90" src="./assets/arrow-right-green.svg" alt="">
+                        <span class="text-2xl font-normal text-dark leading-9 tracking-[-0.96px]">Dedicated Project Manager</span>
+                    </div>
+                    <div class="feature-item flex items-center gap-3">
+                        <img class="feature-arrow w-6 h-6 flex-shrink-0 rotate-90" src="./assets/arrow-right-green.svg" alt="">
+                        <span class="text-2xl font-normal text-dark leading-9 tracking-[-0.96px]">Transparent & Fixed Pricing</span>
+                    </div>
+                    <div class="feature-item flex items-center gap-3">
+                        <img class="feature-arrow w-6 h-6 flex-shrink-0 rotate-90" src="./assets/arrow-right-green.svg" alt="">
+                        <span class="text-2xl font-normal text-dark leading-9 tracking-[-0.96px]">24/7 Support & Maintenance</span>
+                    </div>
+                </div>
+
+                <a id="why-cta-button" href="#contact-section" class="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-semibold px-6 py-4 rounded-full transition-all duration-300">
+                    <img src="./assets/calendar-dot.svg" alt="" class="w-6 h-6">
+                    Schedule a Meeting
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const section = document.getElementById('why-choose-section');
+    const image3d = document.getElementById('why-3d-image');
+    const title = document.getElementById('why-title');
+    const description = document.getElementById('why-description');
+    const featureItems = gsap.utils.toArray('.feature-item');
+    const featureArrows = gsap.utils.toArray('.feature-arrow');
+    const ctaButton = document.getElementById('why-cta-button');
+
+    // ===== 3D IMAGE ENTRANCE =====
+    gsap.from(image3d, {
+        scrollTrigger: {
+            trigger: image3d,
+            start: 'top 80%',
+            once: true
+        },
+        x: -200,
+        opacity: 0,
+        rotation: -15,
+        scale: 0.8,
+        duration: 1.2,
+        ease: 'power3.out'
+    });
+
+    // ===== FLOATING 3D IMAGE =====
+    gsap.to(image3d, {
+        y: -20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+
+    // ===== 3D IMAGE ROTATION ON HOVER =====
+    if (image3d) {
+        // Set 3D transform properties
+        image3d.style.transformStyle = 'preserve-3d';
+        image3d.style.perspective = '1000px';
+
+        image3d.addEventListener('mousemove', (e) => {
+            const rect = image3d.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // More dramatic rotation (divided by 10 instead of 20)
+            const rotateY = (x - centerX) / 8;
+            const rotateX = (centerY - y) / 8;
+
+            gsap.to(image3d, {
+                rotationY: rotateY,
+                rotationX: rotateX,
+                transformPerspective: 1000,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        image3d.addEventListener('mouseleave', () => {
+            gsap.to(image3d, {
+                rotationY: 0,
+                rotationX: 0,
+                duration: 1,
+                ease: 'elastic.out(1, 0.5)'
+            });
+        });
+
+        // Add tilt on scroll for extra 3D effect
+        gsap.to(image3d, {
+            scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1
+            },
+            rotationZ: 5,
+            ease: 'none'
+        });
+    }
+
+    // ===== TITLE ANIMATION =====
+    gsap.from(title, {
+        scrollTrigger: {
+            trigger: title,
+            start: 'top 85%',
+            once: true
+        },
+        x: 100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+
+    // ===== DESCRIPTION ANIMATION =====
+    gsap.from(description, {
+        scrollTrigger: {
+            trigger: description,
+            start: 'top 85%',
+            once: true
+        },
+        x: 100,
+        opacity: 0,
+        duration: 1,
+        delay: 0.2,
+        ease: 'power3.out'
+    });
+
+    // ===== FEATURE ITEMS STAGGERED ENTRANCE =====
+    gsap.from(featureItems, {
+        scrollTrigger: {
+            trigger: '#features-list',
+            start: 'top 85%',
+            once: true
+        },
+        x: 100,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'back.out(1.4)'
+    });
+
+    // ===== FEATURE ARROWS ANIMATION =====
+    featureArrows.forEach((arrow, index) => {
+        gsap.from(arrow, {
+            scrollTrigger: {
+                trigger: arrow,
+                start: 'top 85%',
+                once: true
+            },
+            scale: 0,
+            rotation: -360,
+            opacity: 0,
+            duration: 0.8,
+            delay: index * 0.15 + 0.3,
+            ease: 'elastic.out(1, 0.6)'
+        });
+
+        // Continuous bounce
+        gsap.to(arrow, {
+            y: -5,
+            duration: 1.5,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: index * 0.2
+        });
+    });
+
+    // ===== FEATURE ITEM HOVER EFFECTS =====
+    featureItems.forEach(item => {
+        const arrow = item.querySelector('.feature-arrow');
+
+        item.addEventListener('mouseenter', () => {
+            gsap.to(item, {
+                x: 10,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+
+            gsap.to(arrow, {
+                scale: 1.3,
+                rotation: 180,
+                duration: 0.4,
+                ease: 'back.out(2)'
+            });
+        });
+
+        item.addEventListener('mouseleave', () => {
+            gsap.to(item, {
+                x: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+
+            gsap.to(arrow, {
+                scale: 1,
+                rotation: 90,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+    // ===== CTA BUTTON ANIMATION =====
+    gsap.from(ctaButton, {
+        scrollTrigger: {
+            trigger: ctaButton,
+            start: 'top 90%',
+            once: true
+        },
+        scale: 0,
+        opacity: 0,
+        duration: 0.8,
+        delay: 0.6,
+        ease: 'elastic.out(1, 0.6)'
+    });
+
+    // Button hover effect
+    ctaButton.addEventListener('mouseenter', () => {
+        gsap.to(ctaButton, {
+            scale: 1.08,
+            boxShadow: '0 20px 40px rgba(34, 197, 94, 0.4)',
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+
+        const icon = ctaButton.querySelector('img');
+        if (icon) {
+            gsap.to(icon, {
+                rotation: 360,
+                duration: 0.6,
+                ease: 'back.out(2)'
+            });
+        }
+    });
+
+    ctaButton.addEventListener('mouseleave', () => {
+        gsap.to(ctaButton, {
+            scale: 1,
+            boxShadow: '0 0 0 rgba(34, 197, 94, 0)',
+            duration: 0.3,
+            ease: 'power2.out'
+        });
+    });
+
+    // ===== PULSE EFFECT ON BUTTON =====
+    gsap.to(ctaButton, {
+        boxShadow: '0 0 30px rgba(34, 197, 94, 0.6)',
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
+    });
+});
+</script>

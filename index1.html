@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlideUps - Every Experience Begins With a Feeling</title>
+
+    <!-- Google Fonts - Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1dbf73',
+                            dark: '#17a560',
+                            light: '#2dd492',
+                        },
+                        dark: {
+                            DEFAULT: '#141414',
+                            light: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'scroll': 'scroll 30s linear infinite',
+                        'scroll-reverse': 'scroll-reverse 40s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) translateX(0)' },
+                            '50%': { transform: 'translateY(-20px) translateX(20px)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        'scroll-reverse': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-dark overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <div id="hero-section"></div>
+
+    <!-- Services Section -->
+    <section id="services-section" class="py-20">
+
+        <section class="py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <!-- Section Title -->
+        <h2 class="text-4xl lg:text-5xl xl:text-[48px] font-semibold leading-tight lg:leading-[60px] tracking-[-1.92px] text-center mb-12">
+            Every <span class="text-primary">Services</span> You Are<br>
+            Looking For
+        </h2>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Service Card 1: App Development -->
+            <div class="rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background-color: #F5F5F5;">
+                <!-- Icon -->
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold leading-9 tracking-[-0.96px] mb-3">App Development</h3>
+                <p class="text-xs leading-[18px] tracking-[-0.24px] text-gray mb-4">
+                    We build powerful, user-friendly mobile apps that bring your ideas to life. From concept to launch, our team handles everything — design, development, testing, and support — to ensure your app looks great, runs smoothly, and delivers real results on both iOS and Android.
+                </p>
+                <a href="#" class="flex items-center text-dark font-semibold transition-colors hover:text-primary">
+                    <span>Learn More</span>
+                    <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 ml-2 rotate-90">
+                </a>
+                <div class="absolute -bottom-[17px] -right-[78px] w-[158px] h-[158px] bg-no-repeat opacity-50" style="background-image: url('./assets/service-card-pattern.svg'); transform: rotate(180deg) scaleY(-1);"></div>
+            </div>
+
+            <!-- Service Card 2: Website Development -->
+            <div class="rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background-color: #F5F5F5;">
+                <!-- Icon -->
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold leading-9 tracking-[-0.96px] mb-3">Website Development</h3>
+                <p class="text-xs leading-[18px] tracking-[-0.24px] text-gray mb-4">
+                    Your website is your digital home — and we make sure it stands out. We create responsive, high-performing websites that not only look stunning but also help you grow your business. Whether it's a simple landing page or a complex web platform, we've got you covered.
+                </p>
+                <a href="#" class="flex items-center text-dark font-semibold transition-colors hover:text-primary">
+                    <span>Learn More</span>
+                    <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 ml-2 rotate-90">
+                </a>
+                <div class="absolute -bottom-[17px] -right-[78px] w-[158px] h-[158px] bg-no-repeat opacity-50" style="background-image: url('./assets/service-card-pattern.svg'); transform: rotate(180deg) scaleY(-1);"></div>
+            </div>
+
+            <!-- Service Card 3: UI/UX Design -->
+            <div class="rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background-color: #F5F5F5;">
+                <!-- Icon -->
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold leading-9 tracking-[-0.96px] mb-3">UI /UX Design</h3>
+                <p class="text-xs leading-[18px] tracking-[-0.24px] text-gray mb-4">
+                    We don't just design beautiful interfaces — we craft experiences that feel effortless. Our UI/UX design process focuses on understanding your users and turning your vision into intuitive, engaging designs that keep people coming back.
+                </p>
+                <a href="#" class="flex items-center text-dark font-semibold transition-colors hover:text-primary">
+                    <span>Learn More</span>
+                    <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 ml-2 rotate-90">
+                </a>
+                <div class="absolute -bottom-[17px] -right-[78px] w-[158px] h-[158px] bg-no-repeat opacity-50" style="background-image: url('./assets/service-card-pattern.svg'); transform: rotate(180deg) scaleY(-1);"></div>
+            </div>
+
+            <!-- Service Card 4: NFT Marketplace -->
+            <div class="rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background-color: #F5F5F5;">
+                <!-- Icon -->
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold leading-9 tracking-[-0.96px] mb-3">NFT Marketplace</h3>
+                <p class="text-xs leading-[18px] tracking-[-0.24px] text-gray mb-4">
+                    Step into the world of digital assets with your own NFT marketplace. We build secure, scalable, and user-friendly NFT platforms where creators, collectors, and investors can trade with confidence — all powered by blockchain technology.
+                </p>
+                <a href="#" class="flex items-center text-dark font-semibold transition-colors hover:text-primary">
+                    <span>Learn More</span>
+                    <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 ml-2 rotate-90">
+                </a>
+                <div class="absolute -bottom-[17px] -right-[78px] w-[158px] h-[158px] bg-no-repeat opacity-50" style="background-image: url('./assets/service-card-pattern.svg'); transform: rotate(180deg) scaleY(-1);"></div>
+            </div>
+
+            <!-- Service Card 5: Digital Marketing -->
+            <div class="rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background-color: #F5F5F5;">
+                <!-- Icon -->
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold leading-9 tracking-[-0.96px] mb-3">Digital Marketing</h3>
+                <p class="text-xs leading-[18px] tracking-[-0.24px] text-gray mb-4">
+                    We help your brand get noticed in all the right places. From social media and SEO to paid ads and content strategy, our digital marketing team crafts campaigns that connect with your audience and drive measurable growth.
+                </p>
+                <a href="#" class="flex items-center text-dark font-semibold transition-colors hover:text-primary">
+                    <span>Learn More</span>
+                    <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 ml-2 rotate-90">
+                </a>
+                <div class="absolute -bottom-[17px] -right-[78px] w-[158px] h-[158px] bg-no-repeat opacity-50" style="background-image: url('./assets/service-card-pattern.svg'); transform: rotate(180deg) scaleY(-1);"></div>
+            </div>
+
+            <!-- Service Card 6: Custom Solutions -->
+            <div class="rounded-2xl p-6 lg:p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style="background-color: #F5F5F5;">
+                <!-- Icon -->
+                <div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center mb-6">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-semibold leading-9 tracking-[-0.96px] mb-3">Custom Solutions</h3>
+                <p class="text-xs leading-[18px] tracking-[-0.24px] text-gray mb-4">
+                    Every business is unique — and so are our solutions. Whether you need a custom web app, automation tool, or integrated system, we develop tailored software that fits your specific goals and scales with your growth.
+                </p>
+                <a href="#" class="flex items-center text-dark font-semibold transition-colors hover:text-primary">
+                    <span>Learn More</span>
+                    <img src="./assets/arrow-up.svg" alt="" class="w-6 h-6 ml-2 rotate-90">
+                </a>
+                <div class="absolute -bottom-[17px] -right-[78px] w-[158px] h-[158px] bg-no-repeat opacity-50" style="background-image: url('./assets/service-card-pattern.svg'); transform: rotate(180deg) scaleY(-1);"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case-study-section" class="py-20"></section>
+
+    <!-- Process Section -->
+    <section id="process-section"></section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials-section" class="py-20"></section>
+
+    <!-- FAQs Section -->
+    <section id="faqs-section" class="py-20"></section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-section" class="py-20"></section>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+    <!-- Load Components -->
+    <script>
+        // Load component HTML files
+        function loadComponent(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        // Load all components
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComponent('navbar', 'components/navbar.html');
+            loadComponent('hero-section', 'components/hero.html');
+            // loadComponent('services-section', 'components/services.html');
+            loadComponent('case-study-section', 'components/case-study.html');
+            loadComponent('process-section', 'components/process.html');
+            loadComponent('testimonials-section', 'components/testimonials.html');
+            loadComponent('faqs-section', 'components/faqs.html');
+            loadComponent('contact-section', 'components/contact.html');
+            loadComponent('footer', 'components/footer.html');
+        });
+    </script>
+</body>
+</html>

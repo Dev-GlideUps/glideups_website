@@ -1,0 +1,133 @@
+<!-- Our Proven Approach Section -->
+<section class="py-20 lg:py-28 bg-[#F5F5F5]">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Section Title -->
+        <h2 class="text-4xl lg:text-5xl xl:text-[64px] font-semibold leading-tight lg:leading-[80px] tracking-[-2.56px] text-center mb-12 lg:mb-16 text-dark">
+            Our <span class="text-primary">Proven Approach</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-[1200px] mx-auto">
+            <!-- Left - Code/Terminal Mockup -->
+            <div class="ai-approach-visual order-2 lg:order-1">
+                <div class="bg-dark rounded-[24px] p-6 shadow-2xl">
+                    <!-- Terminal Header -->
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-white/50 text-sm ml-2">ai_pipeline.py</span>
+                    </div>
+                    <!-- Code Content -->
+                    <div class="font-mono text-sm leading-relaxed">
+                        <p><span class="text-purple-400">class</span> <span class="text-yellow-300">AIPipeline</span>:</p>
+                        <p class="pl-4"><span class="text-purple-400">def</span> <span class="text-blue-300">__init__</span>(<span class="text-orange-300">self</span>):</p>
+                        <p class="pl-8"><span class="text-orange-300">self</span>.models = [<span class="text-primary">'GPT-4'</span>, <span class="text-primary">'Claude'</span>]</p>
+                        <p class="pl-8"><span class="text-orange-300">self</span>.status = <span class="text-primary">'ready'</span></p>
+                        <p class="mt-2 pl-4"><span class="text-purple-400">def</span> <span class="text-blue-300">process</span>(<span class="text-orange-300">self</span>, data):</p>
+                        <p class="pl-8"><span class="text-gray-500"># Step 1: Discovery</span></p>
+                        <p class="pl-8">requirements = <span class="text-orange-300">self</span>.analyze(data)</p>
+                        <p class="pl-8"><span class="text-gray-500"># Step 2: Design</span></p>
+                        <p class="pl-8">architecture = <span class="text-orange-300">self</span>.design(requirements)</p>
+                        <p class="pl-8"><span class="text-gray-500"># Step 3: Develop</span></p>
+                        <p class="pl-8">model = <span class="text-orange-300">self</span>.build(architecture)</p>
+                        <p class="pl-8"><span class="text-gray-500"># Step 4: Deploy</span></p>
+                        <p class="pl-8"><span class="text-purple-400">return</span> <span class="text-orange-300">self</span>.deploy(model)</p>
+                        <p class="mt-4 text-primary animate-pulse">>>> Pipeline ready...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right - Steps List -->
+            <div class="ai-approach-steps order-1 lg:order-2">
+                <!-- Step 1 -->
+                <div class="ai-approach-step flex gap-6 mb-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">01</div>
+                        <div class="w-0.5 h-full bg-primary/20 mt-2"></div>
+                    </div>
+                    <div class="pb-8">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Discovery Phase</h3>
+                        <p class="text-gray text-sm leading-relaxed">We analyze your business needs, data sources, and objectives to create a comprehensive AI strategy.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="ai-approach-step flex gap-6 mb-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">02</div>
+                        <div class="w-0.5 h-full bg-primary/20 mt-2"></div>
+                    </div>
+                    <div class="pb-8">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Design & Architecture</h3>
+                        <p class="text-gray text-sm leading-relaxed">Our experts design the optimal AI architecture, selecting the right models and technologies for your use case.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="ai-approach-step flex gap-6 mb-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">03</div>
+                        <div class="w-0.5 h-full bg-primary/20 mt-2"></div>
+                    </div>
+                    <div class="pb-8">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Development & Training</h3>
+                        <p class="text-gray text-sm leading-relaxed">We build and train your AI solution with rigorous testing and optimization for peak performance.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="ai-approach-step flex gap-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">04</div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-dark mb-2">Deployment & Support</h3>
+                        <p class="text-gray text-sm leading-relaxed">We deploy your AI system and provide ongoing maintenance, monitoring, and continuous improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const visual = document.querySelector('.ai-approach-visual');
+        const steps = gsap.utils.toArray('.ai-approach-step');
+
+        // Visual animation
+        if (visual) {
+            gsap.from(visual, {
+                scrollTrigger: {
+                    trigger: visual,
+                    start: 'top 80%',
+                    once: true
+                },
+                x: -60,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        }
+
+        // Steps animation
+        steps.forEach((step, index) => {
+            gsap.from(step, {
+                scrollTrigger: {
+                    trigger: step,
+                    start: 'top 85%',
+                    once: true
+                },
+                x: 40,
+                opacity: 0,
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: 'power3.out'
+            });
+        });
+    }
+});
+</script>

@@ -1,0 +1,165 @@
+<!-- Your Idea Deserves Expert Execution Section -->
+<section class="py-20 lg:py-28 bg-[#F5F5F5]">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-[1200px] mx-auto">
+            <!-- Left Content -->
+            <div class="idea-cta-content">
+                <h2 id="idea-cta-title" class="text-4xl lg:text-5xl xl:text-[56px] font-semibold leading-tight lg:leading-[68px] tracking-[-2.24px] text-dark mb-6">
+                    Your <span class="text-primary">Idea</span><br>
+                    Deserves Expert<br>
+                    Execution
+                </h2>
+
+                <p class="text-gray text-base lg:text-lg leading-relaxed mb-8">
+                    Partner with us to transform your real estate vision into reality. Our team of experts will guide you through every step of the development process.
+                </p>
+
+                <!-- CTA Button -->
+                <a href="#contact-section" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(29,191,115,0.4)]">
+                    Start Your Project
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Right - Floating Cards Visual -->
+            <div class="idea-cta-visual relative flex justify-center lg:justify-end min-h-[400px]">
+                <!-- Background Circle -->
+                <div class="absolute w-[300px] h-[300px] bg-primary/10 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+                <!-- Floating Card 1 -->
+                <div class="floating-card-1 absolute top-8 left-0 lg:left-8 bg-white rounded-2xl p-6 shadow-xl w-[200px]">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded w-3/4 mb-2"></div>
+                    <div class="h-2 bg-gray-200 rounded w-1/2"></div>
+                </div>
+
+                <!-- Floating Card 2 -->
+                <div class="floating-card-2 absolute bottom-12 right-0 lg:right-8 bg-white rounded-2xl p-6 shadow-xl w-[220px]">
+                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="h-2 bg-gray-200 rounded w-full mb-2"></div>
+                    <div class="h-2 bg-gray-200 rounded w-2/3"></div>
+                </div>
+
+                <!-- Floating Card 3 (Center) -->
+                <div class="floating-card-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl p-6 shadow-2xl w-[180px] z-10">
+                    <div class="w-full h-20 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <div class="h-2 bg-primary rounded w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ideaCtaContent = document.querySelector('.idea-cta-content');
+        const floatingCard1 = document.querySelector('.floating-card-1');
+        const floatingCard2 = document.querySelector('.floating-card-2');
+        const floatingCard3 = document.querySelector('.floating-card-3');
+
+        // Content animation
+        gsap.from(ideaCtaContent, {
+            scrollTrigger: {
+                trigger: ideaCtaContent,
+                start: 'top 80%',
+                once: true
+            },
+            x: -60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        // Floating cards entrance
+        if (floatingCard1) {
+            gsap.from(floatingCard1, {
+                scrollTrigger: {
+                    trigger: floatingCard1,
+                    start: 'top 85%',
+                    once: true
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+
+            // Floating animation
+            gsap.to(floatingCard1, {
+                y: -10,
+                duration: 2.5,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+        }
+
+        if (floatingCard2) {
+            gsap.from(floatingCard2, {
+                scrollTrigger: {
+                    trigger: floatingCard2,
+                    start: 'top 85%',
+                    once: true
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.2,
+                ease: 'power3.out'
+            });
+
+            // Floating animation (opposite)
+            gsap.to(floatingCard2, {
+                y: 10,
+                duration: 3,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+        }
+
+        if (floatingCard3) {
+            gsap.from(floatingCard3, {
+                scrollTrigger: {
+                    trigger: floatingCard3,
+                    start: 'top 85%',
+                    once: true
+                },
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.4,
+                ease: 'back.out(1.7)'
+            });
+
+            // Floating animation
+            gsap.to(floatingCard3, {
+                y: -15,
+                rotation: 2,
+                duration: 3.5,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+        }
+    }
+});
+</script>

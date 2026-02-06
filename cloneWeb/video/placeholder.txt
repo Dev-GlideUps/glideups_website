@@ -1,0 +1,9 @@
+Place your showreel.mp4 video file in this directory.
+
+The video will be displayed when users click the "Play Reel" button on the hero section.
+
+Recommended specifications:
+- Format: MP4 (H.264 codec)
+- Resolution: 1920x1080 or 4K
+- Duration: 30-60 seconds
+- File size: Keep under 50MB for web performance

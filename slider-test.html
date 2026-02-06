@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Slider Examples</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #111;
+            color: #fff;
+            padding: 40px 20px;
+        }
+        h1 { text-align: center; margin-bottom: 50px; color: #1dbf73; }
+        h2 { margin-bottom: 15px; color: #1dbf73; }
+        .section { margin-bottom: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .desc { color: #777; margin-bottom: 15px; font-size: 14px; }
+        .slider-container { overflow: hidden; }
+        .slider-track { display: flex; gap: 20px; }
+        .card {
+            min-width: 320px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            flex-shrink: 0;
+            user-select: none;
+        }
+        .card:nth-child(2n) { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .card:nth-child(3n) { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .card:nth-child(4n) { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+        .card:nth-child(5n) { background: linear-gradient(135deg, #fa709a, #fee140); }
+    </style>
+</head>
+<body>
+    <h1>GSAP Slider Examples</h1>
+
+    <!-- Example 1: GSAP Auto-Scroll -->
+    <div class="section">
+        <h2>1. GSAP Infinite Auto-Scroll</h2>
+        <p class="desc">Smooth auto-scroll using GSAP timeline. Pauses on hover.</p>
+        <div class="slider-container">
+            <div class="slider-track" id="track1">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example 2: GSAP Draggable -->
+    <div class="section">
+        <h2>2. GSAP Draggable (Drag Only)</h2>
+        <p class="desc">Drag to scroll. Uses GSAP Draggable plugin with bounds.</p>
+        <div class="slider-container" id="container2">
+            <div class="slider-track" id="track2">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+                <div class="card">Card 6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example 3: Auto-Scroll + Drag -->
+    <div class="section">
+        <h2>3. GSAP Auto-Scroll + Drag</h2>
+        <p class="desc">Auto-scrolls continuously. Drag to control, resumes after release.</p>
+        <div class="slider-container">
+            <div class="slider-track" id="track3">
+                <div class="card">Card 1</div>
+                <div class="card">Card 2</div>
+                <div class="card">Card 3</div>
+                <div class="card">Card 4</div>
+                <div class="card">Card 5</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example 4: Two Rows Opposite -->
+    <div class="section">
+        <h2>4. Two Rows - Opposite Directions</h2>
+        <p class="desc">Two rows auto-scrolling in opposite directions.</p>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="slider-container">
+                <div class="slider-track" id="track4a">
+                    <div class="card">Row 1 - Card 1</div>
+                    <div class="card">Row 1 - Card 2</div>
+                    <div class="card">Row 1 - Card 3</div>
+                    <div class="card">Row 1 - Card 4</div>
+                    <div class="card">Row 1 - Card 5</div>
+                </div>
+            </div>
+            <div class="slider-container">
+                <div class="slider-track" id="track4b">
+                    <div class="card">Row 2 - Card 1</div>
+                    <div class="card">Row 2 - Card 2</div>
+                    <div class="card">Row 2 - Card 3</div>
+                    <div class="card">Row 2 - Card 4</div>
+                    <div class="card">Row 2 - Card 5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // =============================================
+    // Example 1: GSAP Infinite Auto-Scroll
+    // =============================================
+    (function() {
+        const track = document.getElementById('track1');
+        const cards = track.querySelectorAll('.card');
+
+        // Clone cards for seamless loop
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
+
+        const totalWidth = (320 + 20) * cards.length; // card width + gap
+
+        const tl = gsap.timeline({ repeat: -1 });
+        tl.to(track, {
+            x: -totalWidth,
+            duration: 20,
+            ease: 'none'
+        });
+
+        // Pause on hover
+        track.addEventListener('mouseenter', () => tl.pause());
+        track.addEventListener('mouseleave', () => tl.resume());
+    })();
+
+    // =============================================
+    // Example 2: GSAP Draggable (Drag Only)
+    // =============================================
+    (function() {
+        gsap.registerPlugin(Draggable);
+
+        const track = document.getElementById('track2');
+        const container = document.getElementById('container2');
+        const bounds = -(track.scrollWidth - container.offsetWidth);
+
+        Draggable.create(track, {
+            type: 'x',
+            bounds: { minX: bounds, maxX: 0 },
+            edgeResistance: 0.7,
+            cursor: 'grab',
+            activeCursor: 'grabbing'
+        });
+    })();
+
+    // =============================================
+    // Example 3: Auto-Scroll + Drag Combined
+    // =============================================
+    (function() {
+        const track = document.getElementById('track3');
+        const cards = track.querySelectorAll('.card');
+
+        // Clone for loop
+        cards.forEach(card => track.appendChild(card.cloneNode(true)));
+
+        const cardWidth = 320 + 20;
+        const totalWidth = cardWidth * cards.length;
+
+        let xPos = 0;
+        let isDragging = false;
+        let startX, dragStartPos;
+
+        // Auto-scroll
+        gsap.ticker.add(() => {
+            if (!isDragging) {
+                xPos -= 1;
+                if (xPos <= -totalWidth) xPos = 0;
+                gsap.set(track, { x: xPos });
+            }
+        });
+
+        // Drag events
+        track.style.cursor = 'grab';
+
+        track.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            dragStartPos = xPos;
+            track.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const diff = e.clientX - startX;
+            xPos = dragStartPos + diff;
+
+            // Wrap around
+            while (xPos > 0) xPos -= totalWidth;
+            while (xPos < -totalWidth) xPos += totalWidth;
+
+            gsap.set(track, { x: xPos });
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            track.style.cursor = 'grab';
+        });
+    })();
+
+    // =============================================
+    // Example 4: Two Rows Opposite Directions
+    // =============================================
+    (function() {
+        const track4a = document.getElementById('track4a');
+        const track4b = document.getElementById('track4b');
+        const cards4a = track4a.querySelectorAll('.card');
+        const cards4b = track4b.querySelectorAll('.card');
+
+        // Clone cards
+        cards4a.forEach(card => track4a.appendChild(card.cloneNode(true)));
+        cards4b.forEach(card => track4b.appendChild(card.cloneNode(true)));
+
+        const totalWidth = (320 + 20) * cards4a.length;
+
+        // Row 1: Left direction
+        gsap.to(track4a, {
+            x: -totalWidth,
+            duration: 25,
+            ease: 'none',
+            repeat: -1
+        });
+
+        // Row 2: Right direction (start from left)
+        gsap.set(track4b, { x: -totalWidth });
+        gsap.to(track4b, {
+            x: 0,
+            duration: 25,
+            ease: 'none',
+            repeat: -1
+        });
+
+        // Pause on hover
+        [track4a, track4b].forEach(track => {
+            track.addEventListener('mouseenter', () => gsap.globalTimeline.pause());
+            track.addEventListener('mouseleave', () => gsap.globalTimeline.resume());
+        });
+    })();
+    </script>
+</body>
+</html>

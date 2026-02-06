@@ -1,0 +1,66 @@
+<!-- Portfolio Hero Section -->
+<section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex flex-col items-center gap-6 lg:gap-10">
+            <!-- Title -->
+            <h1 class="text-4xl md:text-5xl lg:text-[64px] font-semibold leading-tight lg:leading-[80px] tracking-[-2.56px] text-center text-dark">
+                <span class="text-primary">Work</span> That Speaks<br>For Itself
+            </h1>
+
+            <!-- Filter Tabs -->
+            <div class="bg-gray-light rounded-full p-3 lg:p-4 flex flex-wrap justify-center gap-4 lg:gap-6" id="portfolio-filters">
+                <button class="filter-btn active bg-primary text-white shadow-lg shadow-black/15 px-6 lg:px-8 py-3 rounded-full text-base font-normal transition-all duration-300" data-filter="all">
+                    All
+                </button>
+                <button class="filter-btn bg-white text-gray px-6 lg:px-8 py-3 rounded-full text-base font-normal transition-all duration-300 hover:bg-gray-200" data-filter="website">
+                    Website
+                </button>
+                <button class="filter-btn bg-white text-gray px-6 lg:px-8 py-3 rounded-full text-base font-normal transition-all duration-300 hover:bg-gray-200" data-filter="app">
+                    App
+                </button>
+                <button class="filter-btn bg-white text-gray px-6 lg:px-8 py-3 rounded-full text-base font-normal transition-all duration-300 hover:bg-gray-200" data-filter="dashboard">
+                    Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active state
+            filterBtns.forEach(b => {
+                b.classList.remove('active', 'bg-primary', 'text-white', 'shadow-lg', 'shadow-black/15');
+                b.classList.add('bg-white', 'text-gray');
+            });
+            this.classList.remove('bg-white', 'text-gray');
+            this.classList.add('active', 'bg-primary', 'text-white', 'shadow-lg', 'shadow-black/15');
+
+            // Filter cards
+            const filter = this.dataset.filter;
+            portfolioCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+});
+</script>

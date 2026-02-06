@@ -1,0 +1,188 @@
+<!-- Why Choose GlideUps for Real Estate Section -->
+<section class="py-20 lg:py-28 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-[1200px] mx-auto">
+            <!-- Left Content -->
+            <div class="why-choose-content">
+                <h2 id="why-choose-title" class="text-4xl lg:text-5xl xl:text-[48px] font-semibold leading-tight lg:leading-[60px] tracking-[-1.92px] text-dark mb-6">
+                    Why <span class="text-primary">Choose</span><br>
+                    Glideups for the Real<br>
+                    Estate Industry
+                </h2>
+
+                <p class="text-gray text-base lg:text-lg leading-relaxed mb-8">
+                    We understand the unique challenges of the real estate industry and provide tailored solutions that drive results. Our expertise helps you streamline operations and grow your business.
+                </p>
+
+                <!-- Benefits List -->
+                <ul class="space-y-4 mb-8" id="benefits-list">
+                    <li class="benefit-item flex items-center gap-3">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <span class="text-dark font-medium">Industry-specific expertise and knowledge</span>
+                    </li>
+                    <li class="benefit-item flex items-center gap-3">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <span class="text-dark font-medium">Scalable solutions that grow with you</span>
+                    </li>
+                    <li class="benefit-item flex items-center gap-3">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <span class="text-dark font-medium">24/7 dedicated support</span>
+                    </li>
+                    <li class="benefit-item flex items-center gap-3">
+                        <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <span class="text-dark font-medium">Proven track record of success</span>
+                    </li>
+                </ul>
+
+                <!-- CTA Button -->
+                <a href="#contact-section" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(29,191,115,0.4)]">
+                    Get Started
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Right - Phone Mockups -->
+            <div class="why-choose-image relative flex justify-center lg:justify-end">
+                <!-- Main Phone -->
+                <div class="phone-mockup relative z-10">
+                    <div class="w-[280px] h-[560px] bg-dark rounded-[40px] p-3 shadow-2xl">
+                        <div class="w-full h-full bg-gradient-to-b from-primary/20 to-primary/5 rounded-[32px] overflow-hidden relative">
+                            <!-- Phone Screen Content -->
+                            <div class="absolute top-0 left-0 right-0 h-8 bg-dark/50 flex items-center justify-center">
+                                <div class="w-20 h-5 bg-dark rounded-full"></div>
+                            </div>
+                            <!-- App Preview -->
+                            <div class="pt-12 px-4">
+                                <div class="bg-white rounded-xl p-4 mb-3 shadow-sm">
+                                    <div class="w-full h-24 bg-gray-200 rounded-lg mb-3"></div>
+                                    <div class="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
+                                    <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+                                </div>
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <div class="w-full h-24 bg-gray-200 rounded-lg mb-3"></div>
+                                    <div class="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
+                                    <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Phone (Background) -->
+                <div class="phone-mockup-secondary absolute -left-8 top-16 z-0 opacity-60">
+                    <div class="w-[240px] h-[480px] bg-dark/80 rounded-[36px] p-2 shadow-xl">
+                        <div class="w-full h-full bg-gradient-to-b from-gray-100 to-gray-50 rounded-[30px]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const whyChooseTitle = document.getElementById('why-choose-title');
+        const whyChooseContent = document.querySelector('.why-choose-content');
+        const benefitItems = gsap.utils.toArray('.benefit-item');
+        const phoneMockup = document.querySelector('.phone-mockup');
+        const phoneMockupSecondary = document.querySelector('.phone-mockup-secondary');
+
+        // Content animation
+        gsap.from(whyChooseContent, {
+            scrollTrigger: {
+                trigger: whyChooseContent,
+                start: 'top 80%',
+                once: true
+            },
+            x: -60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out'
+        });
+
+        // Benefits list stagger
+        gsap.from(benefitItems, {
+            scrollTrigger: {
+                trigger: '#benefits-list',
+                start: 'top 85%',
+                once: true
+            },
+            x: -30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: 'power3.out'
+        });
+
+        // Phone mockups animation
+        if (phoneMockup) {
+            gsap.from(phoneMockup, {
+                scrollTrigger: {
+                    trigger: phoneMockup,
+                    start: 'top 80%',
+                    once: true
+                },
+                x: 100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            // Floating animation
+            gsap.to(phoneMockup, {
+                y: -15,
+                duration: 3,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+        }
+
+        if (phoneMockupSecondary) {
+            gsap.from(phoneMockupSecondary, {
+                scrollTrigger: {
+                    trigger: phoneMockupSecondary,
+                    start: 'top 80%',
+                    once: true
+                },
+                x: 60,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+
+            // Floating animation (opposite direction)
+            gsap.to(phoneMockupSecondary, {
+                y: 15,
+                duration: 3.5,
+                ease: 'sine.inOut',
+                yoyo: true,
+                repeat: -1
+            });
+        }
+    }
+});
+</script>

@@ -1,0 +1,42 @@
+<!-- Let's Make the App CTA Banner -->
+<section class="py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="food-cta-banner bg-[#F5F5F5] border border-[#F5A623] rounded-[24px] py-6 px-6 lg:py-[30px] lg:px-[60px] flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 max-w-[1200px] mx-auto">
+            <!-- Left - Text -->
+            <h2 class="text-3xl lg:text-[40px] font-semibold leading-tight lg:leading-[56px] tracking-[-1.6px] text-dark text-center lg:text-left">
+                Let's <span style="color: #F5A623;">Make the App</span> That Help<br class="hidden lg:block">
+                You to Grow
+            </h2>
+
+            <!-- Right - Button -->
+            <a href="#contact-section" class="flex-shrink-0 inline-flex items-center justify-center px-6 py-3 lg:h-[50px] rounded-full font-semibold text-base text-white transition-all duration-300 hover:-translate-y-0.5" style="background-color: #F5A623; box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.16);">
+                Contact Us Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- GSAP Animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctaBanner = document.querySelector('.food-cta-banner');
+
+        if (ctaBanner) {
+            gsap.from(ctaBanner, {
+                scrollTrigger: {
+                    trigger: ctaBanner,
+                    start: 'top 85%',
+                    once: true
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
+        }
+    }
+});
+</script>
