@@ -213,12 +213,12 @@
 
         <!-- Services Section - Core Offerings -->
         <section aria-label="Our Services">
-            <?php include 'components/services.html'; ?>
+            <?php include 'components/servicesv2.html'; ?>
         </section>
 
         <!-- Case Study Section - Portfolio & Success Stories -->
         <section aria-label="Case Studies and Portfolio">
-            <?php include 'components/case-study.html'; ?>
+            <?php include 'components/case-study-vertical.html'; ?>
         </section>
 
         <!-- Why Choose Us Section - Unique Value Proposition -->
