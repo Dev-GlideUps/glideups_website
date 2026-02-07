@@ -204,7 +204,7 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" role="main">
+    <main id="main-content" role="main" class="bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20">
 
         <!-- Hero Section - Primary Value Proposition -->
         <section aria-label="Welcome to GlideUps">
@@ -212,14 +212,10 @@
         </section>
 
         <!-- Services Section - Core Offerings -->
-        <section aria-label="Our Services">
-            <?php include 'components/servicesv2.html'; ?>
-        </section>
+        <?php include 'components/servicesv2.html'; ?>
 
         <!-- Case Study Section - Portfolio & Success Stories -->
-        <section aria-label="Case Studies and Portfolio">
-            <?php include 'components/case-study-vertical.html'; ?>
-        </section>
+        <?php include 'components/case-study-vertical.html'; ?>
 
         <!-- Why Choose Us Section - Unique Value Proposition -->
         <section aria-label="Why Choose GlideUps">

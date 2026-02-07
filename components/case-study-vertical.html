@@ -1,5 +1,5 @@
 <!-- Case Studies - Vertical Scroll-Locked Stack -->
-<section class="case-studies-section relative bg-[#0a0a0a]">
+<section class="case-studies-section relative pt-0">
 
     <!-- Scroll Container - Creates scroll space -->
     <div class="scroll-container">
@@ -16,7 +16,7 @@
 
             <!-- Title Background -->
             <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <h2 class="text-[15vw] lg:text-[20vw] font-black text-white opacity-5">WORK</h2>
+                <h2 class="text-[15vw] lg:text-[20vw] font-black text-gray-900 opacity-5">WORK</h2>
             </div>
 
             <!-- Cards Container -->
@@ -31,12 +31,18 @@
 <style>
 .case-studies-section {
     position: relative;
-    background: linear-gradient(to bottom, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    /* background: #ffffff; */
 }
 
 .scroll-container {
     position: relative;
     height: 600vh; /* 100vh per card × 6 cards */
+}
+
+@media (max-width: 768px) {
+    .scroll-container {
+        height: 500vh; /* Shorter scroll on mobile */
+    }
 }
 
 .viewport-fixed {
@@ -81,29 +87,29 @@
 }
 
 .orb-1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #1dbf73, transparent);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(29, 191, 115, 0.3) 0%, transparent 70%);
     top: -10%;
     left: -10%;
     animation: float 20s infinite;
 }
 
 .orb-2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #667eea, transparent);
-    top: 50%;
-    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    top: 40%;
+    right: -15%;
     animation: float 25s infinite reverse;
 }
 
 .orb-3 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, #f093fb, transparent);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 70%);
     bottom: -10%;
-    left: 40%;
+    left: 30%;
     animation: float 22s infinite;
 }
 
@@ -123,6 +129,16 @@
     perspective: 1000px;
 }
 
+@media (max-width: 768px) {
+    .phone-mockups-container {
+        transform: scale(0.9);
+    }
+
+    .case-card-wrapper {
+        max-width: 100%;
+    }
+}
+
 .phone-mockup {
     width: 280px;
     height: 560px;
@@ -132,6 +148,23 @@
     .phone-mockup {
         width: 220px;
         height: 440px;
+    }
+}
+
+@media (max-width: 768px) {
+    .phone-mockup {
+        width: 160px;
+        height: 320px;
+    }
+
+    .phone-left {
+        left: 10%;
+        opacity: 0.5;
+    }
+
+    .phone-right {
+        right: 0;
+        opacity: 0.4;
     }
 }
 
@@ -182,11 +215,11 @@ document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger);
     // Card style variations matching exact project brand colors
     const cardStyles = [
-        // Artify - Digital Art (Purple with diagonal crosshatch)
+        // Artify - Digital Art (Purple with objects)
         {
             gradient: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 100%)',
-            pattern: 'diagonal-grid',
-            decorations: '<div class="absolute top-10 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"></div><div class="absolute bottom-10 left-10 w-24 h-24 bg-purple-400/10 rotate-45"></div>'
+            pattern: 'dots',
+            decorations: '<div class="absolute top-10 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl"></div><div class="absolute bottom-10 left-10 w-24 h-24 bg-purple-400/10 rounded-lg rotate-12"></div><div class="absolute top-1/2 right-1/4 w-16 h-16 bg-purple-300/10 rounded-full"></div>'
         },
         // My Share - Deep Blue with colorful accents
         {
@@ -306,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (study.type === 'cta') {
             card.innerHTML = `
                 <div class="max-w-7xl mx-auto w-full px-6 lg:px-8">
-                    <div class="bg-gradient-to-br from-primary via-purple-600 to-pink-600 rounded-3xl lg:rounded-[40px] p-12 lg:p-20 text-center">
+                    <div class="bg-gradient-to-r from-[#13AA63] to-[#0d7a45] rounded-3xl lg:rounded-[40px] p-12 lg:p-20 text-center">
                         <div class="text-6xl lg:text-8xl mb-6">🚀</div>
                         <h3 class="text-4xl lg:text-6xl font-black text-white mb-6">${study.title}</h3>
                         <p class="text-xl lg:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">${study.description}</p>
@@ -436,16 +469,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="case-card-wrapper rounded-3xl lg:rounded-[40px] overflow-hidden relative" style="background: ${style.gradient};">
                         ${patternHTML}
                         ${style.decorations}
-                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 lg:p-16 relative z-10">
-                            <div class="order-2 lg:order-1">
-                                <div class="inline-block px-3 py-1 bg-white/10 backdrop-blur rounded-full text-xs ${textColor} font-semibold mb-4">${study.category}</div>
-                                <h3 class="text-3xl lg:text-5xl font-black ${textColor} mb-4 leading-tight">${study.title}</h3>
-                                <p class="text-base lg:text-lg ${subtitleColor} mb-6 leading-relaxed">${study.description}</p>
-                                <a href="${study.link}" class="inline-flex items-center px-8 py-4 ${buttonGradient} text-white rounded-xl font-bold hover:scale-105 transition-all shadow-lg">
+                        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 items-center p-6 lg:p-16 relative z-10">
+                            <div class="w-full">
+                                <div class="inline-block px-3 py-1 bg-white/10 backdrop-blur rounded-full text-xs ${textColor} font-semibold mb-3">${study.category}</div>
+                                <h3 class="text-2xl lg:text-5xl font-black ${textColor} mb-3 lg:mb-4 leading-tight">${study.title}</h3>
+                                <p class="text-sm lg:text-lg ${subtitleColor} mb-4 lg:mb-6 leading-relaxed line-clamp-4 lg:line-clamp-none">${study.description}</p>
+                                <a href="${study.link}" class="inline-flex items-center px-6 py-3 lg:px-8 lg:py-4 ${buttonGradient} text-white rounded-xl font-bold hover:scale-105 transition-all shadow-lg text-sm lg:text-base">
                                     Read case study →
                                 </a>
                             </div>
-                            <div class="phone-mockups-container relative h-[400px] lg:h-[500px] order-1 lg:order-2">
+                            <div class="phone-mockups-container relative h-[280px] lg:h-[500px] w-full">
                                 ${imageLayout}
                             </div>
                         </div>
