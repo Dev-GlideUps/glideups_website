@@ -1,5 +1,5 @@
 <!-- Case Studies - Vertical Scroll-Locked Stack -->
-<section class="case-studies-section relative pt-0">
+<section class="case-studies-section relative pt-0 case-studies-loading">
 
     <!-- Scroll Container - Creates scroll space -->
     <div class="scroll-container">
@@ -34,6 +34,20 @@
     /* background: #ffffff; */
 }
 
+/* Loading state - prevent interaction until ready */
+.case-studies-section.case-studies-loading {
+    pointer-events: none;
+}
+
+.case-studies-section.case-studies-loading .viewport-fixed {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.case-studies-section.case-studies-ready .viewport-fixed {
+    opacity: 1;
+}
+
 .scroll-container {
     position: relative;
     height: 700vh; /* Extended to keep last card pinned */
@@ -42,6 +56,13 @@
 @media (max-width: 768px) {
     .scroll-container {
         height: 600vh; /* Extended for mobile */
+        scroll-snap-type: y proximity;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .project-card {
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
     }
 }
 
@@ -57,12 +78,16 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    -webkit-overflow-scrolling: touch;
 }
 
 .cards-container {
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: 100vh;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .project-card {
@@ -72,6 +97,9 @@
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .project-card.active {
@@ -241,12 +269,22 @@
 }
 </style>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    gsap.registerPlugin(ScrollTrigger);
+// Pre-build everything BEFORE document ready for instant availability
+const CaseStudyBuilder = {
+    init: function() {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Detect mobile device
+        this.isMobile = window.innerWidth < 768;
+        this.buildAllCards();
+    },
+
+    buildAllCards: function() {
     // Card style variations matching exact project brand colors
     const cardStyles = [
         // Artify - Digital Art (Purple with objects)
@@ -361,17 +399,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    const container = document.getElementById('cards-container');
-    let currentCardIndex = 0;
+        const $container = $('#cards-container');
+        const fragment = document.createDocumentFragment();
 
-    // Generate cards
-    caseStudies.forEach((study, index) => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-        card.dataset.index = index;
+        // Generate ALL cards synchronously into a fragment (faster)
+        caseStudies.forEach((study, index) => {
+        const $card = $('<div></div>');
+        $card.addClass('project-card');
+        $card.attr('data-index', index);
 
         if (study.type === 'cta') {
-            card.innerHTML = `
+            $card.html(`
                 <div class="max-w-7xl mx-auto w-full px-6 lg:px-8 h-full flex items-center justify-center">
                     <div class="case-card-wrapper rounded-3xl lg:rounded-[40px] overflow-hidden relative w-full flex items-center justify-center" style="background: linear-gradient(135deg, #13AA63 0%, #0d7a45 100%); min-height: 80vh;">
                         <!-- Pattern Overlay -->
@@ -396,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-            `;
+            `);
         } else {
             const style = cardStyles[index % cardStyles.length];
 
@@ -512,7 +550,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             }
 
-            card.innerHTML = `
+            $card.html(`
                 <div class="max-w-7xl mx-auto w-full px-6 lg:px-8">
                     <div class="case-card-wrapper rounded-3xl lg:rounded-[40px] overflow-hidden relative" style="background: ${style.gradient};">
                         ${patternHTML}
@@ -532,31 +570,115 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 </div>
-            `;
+            `);
         }
 
-        container.appendChild(card);
-    });
+            fragment.appendChild($card[0]);
+        });
 
-    const cards = document.querySelectorAll('.project-card');
-    const scrollContainer = document.querySelector('.scroll-container');
+        // Append all cards at once (single DOM operation)
+        $container[0].appendChild(fragment);
 
-    // Set initial states and z-index for stacking
-    cards.forEach((card, index) => {
-        card.style.zIndex = index; // Higher index = on top
+        // Initialize immediately after building
+        this.initializeCardsNow();
+    },
 
-        if (index === 0) {
-            // First card visible
-            gsap.set(card, { yPercent: 0 });
-            card.classList.add('active');
+    initializeCardsNow: function() {
+        const cards = $('.project-card');
+        const scrollContainer = $('.scroll-container')[0];
+
+        // Set initial states SYNCHRONOUSLY
+        cards.each(function(index) {
+            const card = this;
+            card.style.zIndex = index;
+            card.style.opacity = '1';
+            card.style.visibility = 'visible';
+
+            if (index === 0) {
+                gsap.set(card, {
+                    yPercent: 0,
+                    force3D: true,
+                    immediateRender: true,
+                    transformOrigin: 'center center'
+                });
+                card.classList.add('active');
+            } else {
+                gsap.set(card, {
+                    yPercent: 100,
+                    force3D: true,
+                    immediateRender: true,
+                    transformOrigin: 'center center'
+                });
+            }
+        });
+
+        // Wait for images, then setup animations
+        this.waitForImagesAndAnimate(cards, scrollContainer);
+    },
+
+    waitForImagesAndAnimate: function(cards, scrollContainer) {
+        const images = $('#cards-container img');
+        let imagesLoaded = 0;
+        const totalImages = images.length;
+        const self = this;
+
+        function checkAllLoaded() {
+            imagesLoaded++;
+            if (imagesLoaded >= totalImages) {
+                self.setupScrollAnimations(cards, scrollContainer);
+                self.markAsReady();
+            }
+        }
+
+        if (totalImages === 0) {
+            this.setupScrollAnimations(cards, scrollContainer);
+            this.markAsReady();
         } else {
-            // Other cards start below viewport
-            gsap.set(card, { yPercent: 100 });
-        }
-    });
+            images.each(function() {
+                if (this.complete) {
+                    checkAllLoaded();
+                } else {
+                    $(this).on('load error', checkAllLoaded);
+                }
+            });
 
-    // Create scroll-linked overlapping animation for each card
-    cards.forEach((card, index) => {
+            // Fallback
+            setTimeout(() => {
+                if (imagesLoaded < totalImages) {
+                    self.setupScrollAnimations(cards, scrollContainer);
+                    self.markAsReady();
+                }
+            }, 1500);
+        }
+    },
+
+    markAsReady: function() {
+        $('.case-studies-section')
+            .removeClass('case-studies-loading')
+            .addClass('case-studies-ready');
+    },
+
+    setupScrollAnimations: function(cards, scrollContainer) {
+        const isMobile = this.isMobile;
+
+        // Configure ScrollTrigger for better mobile performance
+        ScrollTrigger.config({
+            autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+            limitCallbacks: true,
+            syncInterval: isMobile ? 100 : 16,
+            ignoreMobileResize: true
+        });
+
+        // Force initial render and refresh
+        requestAnimationFrame(() => {
+            ScrollTrigger.refresh();
+        });
+
+        // Create scroll-linked overlapping animation for each card
+        cards.each(function(index) {
+        const card = this;
+        const $card = $(card);
+
         if (index === 0) return; // Skip first card
 
         const cardScrollSpace = 100 / cards.length; // Each card gets equal scroll space
@@ -566,39 +688,80 @@ document.addEventListener('DOMContentLoaded', function() {
         // Animate card sliding up to overlap previous card
         gsap.to(card, {
             yPercent: 0,
-            ease: 'none',
+            force3D: true,
+            ease: isMobile ? 'power3.out' : 'none',
             scrollTrigger: {
                 trigger: scrollContainer,
                 start: `top+=${startProgress}% top`,
                 end: `top+=${endProgress}% top`,
-                scrub: 1, // Tied directly to scroll position
+                scrub: isMobile ? 2.5 : 1, // Very smooth on mobile
+                invalidateOnRefresh: true,
+                anticipatePin: 1,
+                fastScrollEnd: true,
+                normalizeScroll: isMobile,
+                ignoreMobileResize: true,
                 onEnter: () => {
-                    card.classList.add('active');
+                    $card.addClass('active');
+                    // Force hardware acceleration
+                    if (isMobile) {
+                        requestAnimationFrame(() => {
+                            card.style.transform = card.style.transform + ' translateZ(0)';
+                        });
+                    }
 
                     // Restart rocket and title animations for CTA card
                     if (index === cards.length - 1) {
-                        const rocketIcon = card.querySelector('.rocket-icon');
-                        const ctaTitle = card.querySelector('.cta-title');
+                        const $rocketIcon = $card.find('.rocket-icon');
+                        const $ctaTitle = $card.find('.cta-title');
 
-                        if (rocketIcon) {
-                            rocketIcon.style.animation = 'none';
+                        if ($rocketIcon.length) {
+                            $rocketIcon.css('animation', 'none');
                             setTimeout(() => {
-                                rocketIcon.style.animation = 'rocketTakeoff 1.8s ease-out forwards';
+                                $rocketIcon.css('animation', 'rocketTakeoff 1.8s ease-out forwards');
                             }, 10);
                         }
 
-                        if (ctaTitle) {
-                            ctaTitle.style.animation = 'none';
+                        if ($ctaTitle.length) {
+                            $ctaTitle.css('animation', 'none');
                             setTimeout(() => {
-                                ctaTitle.style.animation = 'slideInUp 1s ease-out 0.3s forwards';
-                                ctaTitle.style.opacity = '0';
+                                $ctaTitle.css({
+                                    'animation': 'slideInUp 1s ease-out 0.3s forwards',
+                                    'opacity': '0'
+                                });
                             }, 10);
                         }
                     }
                 },
-                onLeaveBack: () => card.classList.remove('active')
+                onLeaveBack: () => $card.removeClass('active')
             }
         });
-    });
+        });
+
+        // Final refresh after animations are set up
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+    }
+};
+
+// Initialize IMMEDIATELY when script loads (not waiting for DOM ready)
+$(document).ready(function() {
+    CaseStudyBuilder.init();
+});
+
+// Refresh ScrollTrigger on resize with debounce
+let resizeTimer;
+$(window).on('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 250);
+});
+
+// Final refresh after window fully loads
+$(window).on('load', function() {
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+    }, 100);
 });
 </script>

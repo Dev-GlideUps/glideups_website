@@ -1,266 +1,247 @@
-<section class="py-20 lg:py-24">
-    <div class="container mx-auto px-4 lg:px-8">
+<section class="py-20 lg:py-24 relative overflow-hidden">
+    <!-- Decorative Background Elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
         <!-- Section Header -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 lg:mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 backdrop-blur-xl rounded-full border border-primary/20 mb-4">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                <span class="text-sm font-semibold text-primary">Got Questions?</span>
+            </div>
+
             <h2 class="text-4xl lg:text-5xl xl:text-[48px] font-semibold leading-tight lg:leading-[60px] tracking-[-1.92px] mb-4">
                 Frequently Asked <span class="text-primary">Questions</span>
             </h2>
-            <p class="text-gray mx-auto max-w-[700px]">
-                Get answers to common questions about our services, process, and pricing. Can't find what you're looking for? Contact us directly.
+            <p class="text-gray-600 mx-auto max-w-[700px] text-lg">
+                Get answers to common questions about our services, process, and pricing.
             </p>
         </div>
 
-        <!-- FAQ Accordion -->
-        <div class="max-w-[896px] mx-auto space-y-3">
-            <!-- FAQ 1 - Active -->
-            <div class="border-0 rounded-2xl overflow-hidden shadow-sm">
-                <button class="faq-button w-full bg-primary text-white text-left py-5 px-6 flex items-center justify-between" data-faq="1">
-                    <span class="font-semibold text-xl">How long does it take to build a mobile app or website?</span>
-                    <svg class="w-6 h-6 faq-icon text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="faq-content px-6">
-                    <div class="faq-inner">
-                        <p class="faq-text">Project timelines vary based on complexity. A simple website takes 2-4 weeks, while a feature-rich mobile app typically requires 8-16 weeks. During our discovery call, we'll provide a detailed timeline tailored to your specific requirements.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- FAQ Grid (Generated Dynamically) -->
+        <div id="faq-grid" class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 lg:auto-rows-fr">
+            <!-- FAQs will be generated here -->
+        </div>
 
-            <!-- FAQ 2 -->
-            <div class="border-0 rounded-2xl overflow-hidden">
-                <button class="faq-button w-full bg-gray-light text-dark text-left py-5 px-6 flex items-center justify-between" data-faq="2">
-                    <span class="font-semibold text-xl">What is your pricing model? Are there any hidden costs?</span>
-                    <svg class="w-6 h-6 faq-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <!-- Still Have Questions CTA -->
+        <div class="mt-16 text-center">
+            <div class="max-w-2xl mx-auto p-6 lg:p-7 bg-white rounded-xl border border-gray-200/60">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Still have questions?</h3>
+                <p class="text-gray-600 text-sm mb-5">Can't find the answer you're looking for? Let's chat!</p>
+                <a href="#contact-section" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold px-7 py-3 rounded-lg transition-colors duration-300">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                </button>
-                <div class="faq-content hidden px-6">
-                    <div class="faq-inner">
-                        <p class="faq-text">We offer transparent, fixed-price quotes with no hidden fees. You'll receive a detailed proposal breaking down all costs before we start. We also offer flexible payment plans typically 30% upfront, 40% at midpoint, and 30% upon completion.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ 3 -->
-            <div class="border-0 rounded-2xl overflow-hidden">
-                <button class="faq-button w-full bg-gray-light text-dark text-left py-5 px-6 flex items-center justify-between" data-faq="3">
-                    <span class="font-semibold text-xl">Do you provide ongoing support after the project launches?</span>
-                    <svg class="w-6 h-6 faq-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="faq-content hidden px-6">
-                    <div class="faq-inner">
-                        <p class="faq-text">Absolutely! We offer comprehensive post-launch support including bug fixes, performance monitoring, security updates, and feature enhancements. Choose from our monthly maintenance packages or pay-as-you-go support options.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ 4 -->
-            <div class="border-0 rounded-2xl overflow-hidden">
-                <button class="faq-button w-full bg-gray-light text-dark text-left py-5 px-6 flex items-center justify-between" data-faq="4">
-                    <span class="font-semibold text-xl">What technologies and frameworks do you specialize in?</span>
-                    <svg class="w-6 h-6 faq-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="faq-content hidden px-6">
-                    <div class="faq-inner">
-                        <p class="faq-text">We work with modern technologies including  Flutter, React, React Native, Node.js, Python, Laravel, and cloud platforms like AWS and Google Cloud. We choose the best tech stack based on your project requirements, scalability needs, and budget.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ 5 -->
-            <div class="border-0 rounded-2xl overflow-hidden">
-                <button class="faq-button w-full bg-gray-light text-dark text-left py-5 px-6 flex items-center justify-between" data-faq="5">
-                    <span class="font-semibold text-xl">How do you ensure the security of my application?</span>
-                    <svg class="w-6 h-6 faq-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="faq-content hidden px-6">
-                    <div class="faq-inner">
-                        <p class="faq-text">Security is built into every project from day one. We implement industry best practices including SSL encryption, secure authentication, data encryption, regular security audits, and compliance with GDPR and other relevant regulations.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ 6 -->
-            <div class="border-0 rounded-2xl overflow-hidden">
-                <button class="faq-button w-full bg-gray-light text-dark text-left py-5 px-6 flex items-center justify-between" data-faq="6">
-                    <span class="font-semibold text-xl">Can I see progress updates during development?</span>
-                    <svg class="w-6 h-6 faq-icon text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div class="faq-content hidden px-6">
-                    <div class="faq-inner">
-                        <p class="faq-text">Yes! We follow an agile methodology with 2-week sprints. You'll have access to a staging environment to test features in real-time, weekly video calls with your project manager, and 24/7 access to our project management dashboard.</p>
-                    </div>
-                </div>
+                    Contact Us
+                </a>
             </div>
         </div>
     </div>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 <script>
-// FAQ Accordion with Smooth GSAP Animations
 document.addEventListener('DOMContentLoaded', function() {
-    const faqItems = document.querySelectorAll('.faq-button');
-    let isAnimating = false;
+    gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize all FAQs
-    faqItems.forEach((button, index) => {
-        const content = button.nextElementSibling;
-        const inner = content.querySelector('.faq-inner');
-        const text = content.querySelector('.faq-text');
-
-        if (!content.classList.contains('hidden')) {
-            // Active FAQ
-            gsap.set(content, { height: 'auto', paddingTop: 16, paddingBottom: 16, overflow: 'hidden' });
-            content.classList.add('bg-primary', 'text-white');
-            text.classList.add('text-white/90');
-        } else {
-            // Inactive FAQs
-            gsap.set(content, { height: 0, paddingTop: 0, paddingBottom: 0, overflow: 'hidden' });
-            content.classList.add('bg-gray-light');
-            text.classList.add('text-dark/90');
+    // FAQ Data Configuration (Like Flutter's data models)
+    const faqData = [
+        {
+            id: 1,
+            category: 'TIMELINE',
+            question: 'How long does it take to build a mobile app or website?',
+            answer: 'Project timelines vary based on complexity. A simple website takes <strong class="text-primary font-semibold">2-4 weeks</strong>, while a feature-rich mobile app typically requires <strong class="text-primary font-semibold">8-16 weeks</strong>. During our discovery call, we\'ll provide a detailed timeline tailored to your specific requirements.',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+        },
+        {
+            id: 2,
+            category: 'PRICING',
+            question: 'What is your pricing model? Are there any hidden costs?',
+            answer: 'We offer transparent, fixed-price quotes with <strong class="text-primary font-semibold">no hidden fees</strong>. You\'ll receive a detailed proposal breaking down all costs before we start. We also offer flexible payment plans typically <strong class="text-primary font-semibold">30% upfront, 40% at midpoint, and 30% upon completion</strong>.',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+        },
+        {
+            id: 3,
+            category: 'SUPPORT',
+            question: 'Do you provide ongoing support after the project launches?',
+            answer: 'Absolutely! We offer comprehensive post-launch support including <strong class="text-primary font-semibold">bug fixes, performance monitoring, security updates, and feature enhancements</strong>. Choose from our monthly maintenance packages or pay-as-you-go support options.',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>'
+        },
+        {
+            id: 4,
+            category: 'TECHNOLOGY',
+            question: 'What technologies and frameworks do you specialize in?',
+            answer: 'We work with modern technologies including <strong class="text-primary font-semibold">Flutter, React, React Native, Node.js, Python, Laravel</strong>, and cloud platforms like <strong class="text-primary font-semibold">AWS and Google Cloud</strong>. We choose the best tech stack based on your project requirements, scalability needs, and budget.',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>'
+        },
+        {
+            id: 5,
+            category: 'SECURITY',
+            question: 'How do you ensure the security of my application?',
+            answer: 'Security is built into every project from day one. We implement industry best practices including <strong class="text-primary font-semibold">SSL encryption, secure authentication, data encryption, regular security audits</strong>, and compliance with <strong class="text-primary font-semibold">GDPR</strong> and other relevant regulations.',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>'
+        },
+        {
+            id: 6,
+            category: 'UPDATES',
+            question: 'Can I see progress updates during development?',
+            answer: 'Yes! We follow an agile methodology with <strong class="text-primary font-semibold">2-week sprints</strong>. You\'ll have access to a staging environment to test features in real-time, <strong class="text-primary font-semibold">weekly video calls</strong> with your project manager, and <strong class="text-primary font-semibold">24/7 access</strong> to our project management dashboard.',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>'
         }
+    ];
+
+    // Reusable FAQ Component Builder (Like Flutter Widget)
+    function createFAQItem(data) {
+        const faqItem = document.createElement('div');
+        faqItem.className = 'faq-item group flex flex-col';
+        faqItem.innerHTML = `
+            <button class="faq-button w-full bg-white hover:bg-gray-50/80 text-dark text-left p-6 lg:p-7 rounded-xl flex items-start justify-between border border-gray-200/60 transition-all duration-300 min-h-[140px]" data-faq="${data.id}">
+                <div class="flex-1 pr-4">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="text-lg font-black text-primary number-badge">${data.id}</span>
+                        <span class="text-xs font-bold text-primary uppercase tracking-wider category-label">${data.category}</span>
+                    </div>
+                    <span class="font-medium text-base lg:text-lg block text-gray-900 question-text leading-relaxed">${data.question}</span>
+                </div>
+                <svg class="w-5 h-5 faq-icon text-primary flex-shrink-0 mt-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <div class="faq-content hidden overflow-hidden">
+                <div class="faq-inner bg-gray-50/50 border-x border-b border-gray-200/60 rounded-b-xl -mt-1 pt-5 pb-6 px-6 lg:px-7">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 mt-0.5">
+                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                ${data.icon}
+                            </svg>
+                        </div>
+                        <p class="faq-text text-gray-700 leading-relaxed text-[15px] lg:text-base flex-1">
+                            ${data.answer}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+        return faqItem;
+    }
+
+    // Render all FAQs
+    const faqGrid = document.getElementById('faq-grid');
+    faqData.forEach(faq => {
+        faqGrid.appendChild(createFAQItem(faq));
     });
 
-    // Handle FAQ clicks
-    faqItems.forEach((button, currentIndex) => {
+    // Initialize FAQ functionality
+    const faqButtons = document.querySelectorAll('.faq-button');
+    let isAnimating = false;
+
+    // Entrance animations
+    gsap.utils.toArray('.faq-item').forEach((item, index) => {
+        gsap.from(item, {
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                toggleActions: 'play none none none',
+                once: true
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.6,
+            delay: index * 0.1,
+            ease: 'power3.out'
+        });
+    });
+
+    // FAQ Click Handler
+    faqButtons.forEach((button, currentIndex) => {
         button.addEventListener('click', function() {
             if (isAnimating) return;
 
             const content = this.nextElementSibling;
-            const inner = content.querySelector('.faq-inner');
             const icon = this.querySelector('.faq-icon');
-            const text = content.querySelector('.faq-text');
             const isOpen = !content.classList.contains('hidden');
 
             isAnimating = true;
 
             // Close all other FAQs
-            faqItems.forEach((otherButton, otherIndex) => {
+            faqButtons.forEach((otherButton, otherIndex) => {
                 if (otherIndex !== currentIndex) {
                     const otherContent = otherButton.nextElementSibling;
                     const otherIcon = otherButton.querySelector('.faq-icon');
-                    const otherText = otherContent.querySelector('.faq-text');
 
                     if (!otherContent.classList.contains('hidden')) {
-                        // Close animation
-                        const closeTl = gsap.timeline({
-                            onComplete: () => {
-                                otherContent.classList.add('hidden');
-                            }
+                        gsap.to(otherContent, {
+                            height: 0,
+                            duration: 0.3,
+                            ease: 'power2.inOut',
+                            onComplete: () => otherContent.classList.add('hidden')
                         });
 
-                        closeTl.to(otherContent, {
-                            height: 0,
-                            paddingTop: 0,
-                            paddingBottom: 0,
-                            duration: 0.5,
-                            ease: 'power2.inOut'
-                        }, 0);
-
-                        closeTl.to(otherIcon, {
+                        gsap.to(otherIcon, {
                             rotation: 0,
-                            duration: 0.4,
+                            duration: 0.3,
                             ease: 'power2.inOut'
-                        }, 0);
+                        });
 
-                        // Update styles
-                        otherButton.classList.remove('bg-primary', 'text-white');
-                        otherButton.classList.add('bg-gray-light', 'text-dark');
-                        otherIcon.classList.remove('text-white');
-                        otherIcon.classList.add('text-primary');
-                        otherContent.classList.remove('bg-primary', 'text-white');
-                        otherContent.classList.add('bg-gray-light');
-                        otherText.classList.remove('text-white/90');
-                        otherText.classList.add('text-dark/90');
+                        otherButton.classList.remove('border-primary/40', 'bg-primary/5');
                     }
                 }
             });
 
             // Toggle current FAQ
             if (isOpen) {
-                // Close current FAQ
-                const closeTl = gsap.timeline({
+                // Close
+                gsap.to(content, {
+                    height: 0,
+                    duration: 0.3,
+                    ease: 'power2.inOut',
                     onComplete: () => {
                         content.classList.add('hidden');
                         isAnimating = false;
                     }
                 });
 
-                closeTl.to(content, {
-                    height: 0,
-                    paddingTop: 0,
-                    paddingBottom: 0,
-                    duration: 0.5,
-                    ease: 'power2.inOut'
-                }, 0);
-
-                closeTl.to(icon, {
+                gsap.to(icon, {
                     rotation: 0,
-                    duration: 0.4,
+                    duration: 0.3,
                     ease: 'power2.inOut'
-                }, 0);
+                });
 
-                // Update styles
-                button.classList.remove('bg-primary', 'text-white');
-                button.classList.add('bg-gray-light', 'text-dark');
-                icon.classList.remove('text-white');
-                icon.classList.add('text-primary');
-                content.classList.remove('bg-primary', 'text-white');
-                content.classList.add('bg-gray-light');
-                text.classList.remove('text-white/90');
-                text.classList.add('text-dark/90');
+                button.classList.remove('border-primary/40', 'bg-primary/5');
             } else {
-                // Open current FAQ
+                // Open
                 content.classList.remove('hidden');
+                button.classList.add('border-primary/40', 'bg-primary/5');
 
-                // Update styles first
-                button.classList.remove('bg-gray-light', 'text-dark');
-                button.classList.add('bg-primary', 'text-white');
-                icon.classList.remove('text-primary');
-                icon.classList.add('text-white');
-                content.classList.remove('bg-gray-light');
-                content.classList.add('bg-primary', 'text-white');
-                text.classList.remove('text-dark/90');
-                text.classList.add('text-white/90');
-
-                // Measure natural height with padding
-                gsap.set(content, { height: 'auto', paddingTop: 16, paddingBottom: 16 });
+                // Measure and animate
+                gsap.set(content, { height: 'auto' });
                 const targetHeight = content.offsetHeight;
-                gsap.set(content, { height: 0, paddingTop: 0, paddingBottom: 0 });
+                gsap.set(content, { height: 0 });
 
-                // Open animation
-                const openTl = gsap.timeline({
+                gsap.to(content, {
+                    height: targetHeight,
+                    duration: 0.4,
+                    ease: 'power3.out',
                     onComplete: () => {
                         gsap.set(content, { height: 'auto' });
                         isAnimating = false;
                     }
                 });
 
-                openTl.to(content, {
-                    height: targetHeight,
-                    paddingTop: 16,
-                    paddingBottom: 16,
-                    duration: 0.6,
-                    ease: 'power2.out'
-                }, 0);
-
-                openTl.to(icon, {
+                gsap.to(icon, {
                     rotation: 180,
-                    duration: 0.4,
+                    duration: 0.3,
                     ease: 'power2.inOut'
-                }, 0);
+                });
             }
         });
     });
+
 });
 </script>
