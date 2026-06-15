@@ -1,0 +1,64 @@
+<!-- Food Delivery - Tech Stack Ticker -->
+<section aria-label="Technology stack" class="relative bg-[#FDF6EF] border-y border-black/5 py-4 overflow-hidden">
+    <!-- Edge fades -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-20 z-10" style="background:linear-gradient(90deg,#FDF6EF 0%,rgba(253,246,239,0) 100%);"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-20 z-10" style="background:linear-gradient(270deg,#FDF6EF 0%,rgba(253,246,239,0) 100%);"></div>
+
+    <!-- Scrolling track: two identical halves -> seamless loop (never pauses).
+         Slower scroll via animation-duration override (default is 30s). -->
+    <div class="flex w-max items-center animate-scroll whitespace-nowrap" style="animation-duration: 60s;">
+
+        <?php for ($i = 0; $i < 2; $i++): $hidden = $i === 1 ? ' aria-hidden="true"' : ''; ?>
+
+        <!-- iOS App -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path d="M10.5 1.875a1.125 1.125 0 0 1 2.25 0v.075a1.125 1.125 0 0 1-2.25 0v-.075Z"/><path fill-rule="evenodd" d="M7.5 3.75A2.25 2.25 0 0 0 5.25 6v12a2.25 2.25 0 0 0 2.25 2.25h9A2.25 2.25 0 0 0 18.75 18V6a2.25 2.25 0 0 0-2.25-2.25h-1.5l-.227.36a.75.75 0 0 1-.638.39H10.86a.75.75 0 0 1-.638-.39l-.227-.36H7.5Zm5.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z" clip-rule="evenodd"/></svg>
+            <span>iOS App <span class="text-dark/30 mx-0.5">&middot;</span> Flutter</span>
+        </span>
+
+        <!-- Android App -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path d="M10.5 1.875a1.125 1.125 0 0 1 2.25 0v.075a1.125 1.125 0 0 1-2.25 0v-.075Z"/><path fill-rule="evenodd" d="M7.5 3.75A2.25 2.25 0 0 0 5.25 6v12a2.25 2.25 0 0 0 2.25 2.25h9A2.25 2.25 0 0 0 18.75 18V6a2.25 2.25 0 0 0-2.25-2.25h-1.5l-.227.36a.75.75 0 0 1-.638.39H10.86a.75.75 0 0 1-.638-.39l-.227-.36H7.5Zm5.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5Z" clip-rule="evenodd"/></svg>
+            <span>Android App <span class="text-dark/30 mx-0.5">&middot;</span> Flutter</span>
+        </span>
+
+        <!-- Web App -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.591V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z" clip-rule="evenodd"/></svg>
+            <span>Web App <span class="text-dark/30 mx-0.5">&middot;</span> React.js</span>
+        </span>
+
+        <!-- Admin Panel -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3V6ZM3 15.75a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2.25Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3v-2.25Z" clip-rule="evenodd"/></svg>
+            <span>Admin Panel <span class="text-dark/30 mx-0.5">&middot;</span> React.js</span>
+        </span>
+
+        <!-- Rider App -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25ZM13.5 15H1.5v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 1 1 6 0h3a.75.75 0 0 0 .75-.75V15Z"/><path d="M8.25 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0ZM15.75 6.75a.75.75 0 0 0-.75.75v11.25c0 .087.015.17.042.248a3 3 0 0 1 5.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 0 0-3.732-10.104 1.837 1.837 0 0 0-1.47-.725H15.75Z"/><path d="M19.5 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/></svg>
+            <span>Rider App <span class="text-dark/30 mx-0.5">&middot;</span> Flutter</span>
+        </span>
+
+        <!-- Node.js Backend -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd"/></svg>
+            <span>Node.js Backend</span>
+        </span>
+
+        <!-- Firebase Push Notifications -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M5.25 9a6.75 6.75 0 0 1 13.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 0 1-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 1 1-7.48 0 24.585 24.585 0 0 1-4.831-1.244.75.75 0 0 1-.298-1.205A8.217 8.217 0 0 0 5.25 9.75V9Zm4.502 8.9a2.25 2.25 0 1 0 4.496 0 25.057 25.057 0 0 1-4.496 0Z" clip-rule="evenodd"/></svg>
+            <span>Firebase Push Notifications</span>
+        </span>
+
+        <!-- MySQL Database -->
+        <span class="food-stack-item inline-flex items-center gap-2 mx-7 shrink-0 text-sm font-semibold text-dark"<?php echo $hidden; ?>>
+            <svg class="w-4 h-4 shrink-0" fill="#FF6F00" viewBox="0 0 24 24"><path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875Z"/><path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 0 0 1.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.282 8.282 0 0 0 1.897 1.384C6.809 12.164 9.315 12.75 12 12.75Z"/><path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.282 8.282 0 0 0 1.897 1.384C6.809 15.914 9.315 16.5 12 16.5Z"/><path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.282 8.282 0 0 0 1.897 1.384C6.809 19.664 9.315 20.25 12 20.25Z"/></svg>
+            <span>MySQL Database</span>
+        </span>
+
+        <?php endfor; ?>
+
+    </div>
+</section>

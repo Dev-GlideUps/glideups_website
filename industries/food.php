@@ -268,26 +268,39 @@
     <!-- Hero Section with Contact Form -->
     <?php include '../components/industries/food-hero.html'; ?>
 
-    <!-- Benefits Section -->
-    <?php include '../components/industries/food-benefits.html'; ?>
+    <!-- Tech Stack Ticker -->
+    <?php include '../components/industries/food-stack.html'; ?>
 
-    <!-- Why Choose Pre-Made Product Section -->
-    <?php include '../components/industries/food-why-premade.html'; ?>
+    <!-- The Yummy Suite -->
+    <?php include '../components/industries/food-suite.html'; ?>
 
-    <!-- CTA Banner -->
-    <?php include '../components/industries/food-cta-banner.html'; ?>
+    <!-- Features -->
+    <?php include '../components/industries/food-features.html'; ?>
 
-    <!-- Services Section -->
-    <?php include '../components/industries/food-services.html'; ?>
+    <!-- Screens -->
+    <?php include '../components/industries/food-screens.html'; ?>
 
-    <!-- Testimonials Section -->
-    <?php include '../components/industries/food-testimonials.html'; ?>
+    <!-- Why Yummy -->
+    <?php include '../components/industries/food-why.html'; ?>
 
-    <!-- FAQs Section -->
-    <?php include '../components/industries/food-faqs.html'; ?>
+    <!-- Tech Stack -->
+    <?php include '../components/industries/food-techstack.html'; ?>
 
-    <!-- Your Idea CTA Section -->
-    <?php include '../components/industries/food-idea-cta.html'; ?>
+    <!-- Live Demo -->
+    <?php include '../components/industries/food-livedemo.html'; ?>
+
+    <!-- Reviews -->
+    <?php include '../components/industries/food-reviews.html'; ?>
+
+    <!-- Pricing -->
+    <?php include '../components/industries/food-pricing.html'; ?>
+
+    <!-- FAQs -->
+    <?php include '../components/industries/food-faq.html'; ?>
+
+    <!-- Go Live (contact CTA) -->
+    <?php include '../components/industries/food-golive.html'; ?>
+
 
     <!-- Footer -->
     <?php include '../components/footer.html'; ?>

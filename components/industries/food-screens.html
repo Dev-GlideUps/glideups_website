@@ -1,0 +1,120 @@
+<!-- Food Delivery - Screens (tabbed screen showcase) -->
+<section aria-label="Screens" class="relative overflow-hidden py-20 lg:py-28" style="background:#FFFBF5;">
+    <div class="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative z-10">
+
+        <!-- ===== Heading ===== -->
+        <div class="text-center max-w-2xl mx-auto">
+            <p class="text-xs font-bold tracking-[0.22em] uppercase mb-3" style="color:#FF6F00;">Screens</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-1px] text-dark leading-tight">
+                Polished UI across every surface.
+            </h2>
+            <p class="text-sm lg:text-base text-dark/60 mt-4">
+                Every flow is designed with care. Tap a tab to explore the screens.
+            </p>
+        </div>
+
+        <!-- ===== Tabs (segmented control) ===== -->
+        <div class="flex justify-center mt-8">
+            <div class="inline-flex flex-wrap items-center justify-center gap-1 p-1.5 rounded-xl bg-white border border-dark/10 shadow-sm">
+                <button type="button" data-screens-tab="customer" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Customer App</button>
+                <button type="button" data-screens-tab="rider" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Rider App</button>
+                <button type="button" data-screens-tab="admin" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Admin Panel</button>
+                <button type="button" data-screens-tab="web" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Web App</button>
+            </div>
+        </div>
+
+        <!-- ===== Tab panels ===== -->
+        <div class="mt-12 lg:mt-14">
+
+            <!-- Customer App -->
+            <div data-screens-panel="customer" class="screens-panel flex flex-wrap justify-center items-end gap-0">
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device9.png" alt="Browse menu screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Browse menu</figcaption>
+                </figure>
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device10.png" alt="Item details screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Item details</figcaption>
+                </figure>
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device11.png" alt="Active orders screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Active orders</figcaption>
+                </figure>
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device12.png" alt="Order timeline screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Order timeline</figcaption>
+                </figure>
+            </div>
+
+            <!-- Rider App -->
+            <div data-screens-panel="rider" class="screens-panel hidden flex-wrap justify-center items-end gap-0">
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device4.png" alt="Rider dashboard screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Rider dashboard</figcaption>
+                </figure>
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device11.png" alt="Assigned orders screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Assigned orders</figcaption>
+                </figure>
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device12.png" alt="Order timeline screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Order timeline</figcaption>
+                </figure>
+                <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
+                    <img src="assets/food/food_device1.png" alt="Live tracking screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
+                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Live tracking</figcaption>
+                </figure>
+            </div>
+
+            <!-- Admin Panel -->
+            <div data-screens-panel="admin" class="screens-panel hidden justify-center">
+                <figure class="w-full max-w-[860px]">
+                    <img src="assets/food/food_panel3.png" alt="Admin operations dashboard" class="w-full h-auto rounded-lg" style="filter:drop-shadow(0 25px 50px rgba(0,0,0,0.16));">
+                    <figcaption class="text-center text-xs text-dark/50 mt-4">Operations dashboard</figcaption>
+                </figure>
+            </div>
+
+            <!-- Web App -->
+            <div data-screens-panel="web" class="screens-panel hidden justify-center">
+                <figure class="w-full max-w-[860px]">
+                    <img src="assets/food/food_panel4.png" alt="Customer web ordering" class="w-full h-auto rounded-lg" style="filter:drop-shadow(0 25px 50px rgba(0,0,0,0.16));">
+                    <figcaption class="text-center text-xs text-dark/50 mt-4">Web ordering</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.screens-tab'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.screens-panel'));
+    if (!tabs.length) return;
+
+    function setActive(key) {
+        tabs.forEach(function (t) {
+            var active = t.getAttribute('data-screens-tab') === key;
+            if (active) {
+                t.style.background = '#FF6F00';
+                t.style.color = '#ffffff';
+                t.style.boxShadow = '0 6px 16px rgba(255,111,0,0.25)';
+            } else {
+                t.style.background = 'transparent';
+                t.style.color = 'rgba(20,20,20,0.7)';
+                t.style.boxShadow = 'none';
+            }
+        });
+        panels.forEach(function (p) {
+            var match = p.getAttribute('data-screens-panel') === key;
+            // panels use flex; toggle 'hidden' and restore 'flex' when shown
+            p.classList.toggle('hidden', !match);
+            p.classList.toggle('flex', match);
+        });
+    }
+
+    tabs.forEach(function (t) {
+        t.addEventListener('click', function () { setActive(t.getAttribute('data-screens-tab')); });
+    });
+    setActive('customer');
+});
+</script>

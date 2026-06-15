@@ -1,0 +1,102 @@
+<!-- Food Delivery - The Yummy Suite -->
+<section aria-label="The Yummy Suite" class="relative bg-white overflow-hidden py-20 lg:py-28">
+    <!-- Soft warm glow/shadow behind the section title -->
+    <div class="pointer-events-none absolute left-1/2 top-[8%] -translate-x-1/2 -translate-y-1/2 w-[760px] h-[340px] rounded-full blur-3xl opacity-40" style="background:radial-gradient(closest-side,#FFE0C2,transparent);"></div>
+
+    <div class="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative z-10">
+
+        <!-- ===== Heading ===== -->
+        <div class="text-center">
+            <p class="text-xs font-bold tracking-[0.22em] uppercase mb-3" style="color:#FF6F00;">The Yummy Suite</p>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-1px] text-dark leading-tight max-w-2xl mx-auto">
+                Four products, built to work together.
+            </h2>
+            <p class="text-sm lg:text-base text-dark/60 max-w-xl mx-auto mt-4">
+                One design language. One backend. One uncompromising bar for quality &mdash; across every surface your business needs.
+            </p>
+        </div>
+
+        <!-- ===== Layered Composition: 2 panels behind, 2 phones in front ===== -->
+        <div class="relative w-full max-w-[1000px] mx-auto mt-10 lg:mt-14 aspect-[25/13]">
+
+            <!-- Panel 1: Admin dashboard (LEFT, BEHIND, flat / no tilt) -->
+            <div class="absolute left-0 top-[24%] w-[43%] z-10">
+                <img src="assets/food/food_panel1.png" alt="Yummy admin panel dashboard" class="w-full h-auto">
+                <img id="food-suite-banner-4" src="assets/food/notification_banner4.png" alt="Admin Panel — React.js" class="absolute -top-[6%] left-[7%] w-[43%] h-auto z-30" style="filter:drop-shadow(0 10px 22px rgba(0,0,0,0.15));">
+            </div>
+
+            <!-- Panel 2: Customer web (RIGHT, BEHIND, tilted so left edge recedes) -->
+            <div class="absolute right-0 top-[24%] w-[43%] z-10">
+                <img src="assets/food/food_panel2.png" alt="Yummy customer web app" class="w-full h-auto" style="transform: perspective(1600px) rotateY(-24deg); transform-origin: center;">
+            </div>
+
+            <!-- Phone 1: Customer app (CENTER-LEFT, FRONT, lower) -->
+            <div class="absolute left-[26%] top-[3%] w-[27%] z-20">
+                <img src="assets/food/food_device3.png" alt="Yummy customer app" class="w-full h-auto">
+                <img id="food-suite-banner-3" src="assets/food/notification_banner3.png" alt="Customer App — Flutter" class="absolute top-[2%] -left-[38%] w-[68%] h-auto z-30" style="filter:drop-shadow(0 10px 22px rgba(0,0,0,0.15));">
+            </div>
+
+            <!-- Phone 2: Rider app (CENTER-RIGHT, FRONT, slightly higher) -->
+            <div class="absolute left-[47%] top-[1%] w-[26%] z-20">
+                <img src="assets/food/food_device4.png" alt="Yummy rider app" class="w-full h-auto">
+                <img id="food-suite-banner-5" src="assets/food/notification_banner5.png" alt="Admin Panel — React.js" class="absolute top-[2%] -right-[42%] w-[71%] h-auto z-30" style="filter:drop-shadow(0 10px 22px rgba(0,0,0,0.15));">
+            </div>
+
+            <!-- Customer Web label (behind the phones, peeking out over the web panel) -->
+            <img id="food-suite-banner-6" src="assets/food/notification_banner6.png" alt="Customer Web — React.js" class="absolute top-[20%] left-[71%] w-[18.5%] h-auto z-[15]" style="filter:drop-shadow(0 10px 22px rgba(0,0,0,0.15));">
+        </div>
+
+        <!-- ===== Stats Bar ===== -->
+        <div class="max-w-[1000px] mx-auto mt-2 grid grid-cols-2 md:grid-cols-4 gap-y-6 rounded-2xl border border-black/10 bg-white/70 px-6 py-7 md:divide-x md:divide-black/10">
+            <div class="md:px-6">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-dark/40">Apps Included</p>
+                <p class="text-2xl font-bold text-dark mt-1">4</p>
+                <p class="text-xs text-dark/50 mt-1">iOS &middot; Android &middot; Web &middot; Admin</p>
+            </div>
+            <div class="md:px-6">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-dark/40">Codebase</p>
+                <p class="text-2xl font-bold text-dark mt-1">100%</p>
+                <p class="text-xs text-dark/50 mt-1">Source code, no lock-in</p>
+            </div>
+            <div class="md:px-6">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-dark/40">Stack</p>
+                <p class="text-2xl font-bold text-dark mt-1">Flutter + React</p>
+                <p class="text-xs text-dark/50 mt-1">One team, every device</p>
+            </div>
+            <div class="md:px-6">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-dark/40">Backend</p>
+                <p class="text-2xl font-bold text-dark mt-1">Node + MySQL</p>
+                <p class="text-xs text-dark/50 mt-1">Deploy anywhere</p>
+            </div>
+        </div>
+
+        <!-- ===== Explore features button ===== -->
+        <div class="text-center mt-10">
+            <a href="#contact-section" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-dark/25 font-semibold text-dark hover:border-dark/40 hover:bg-dark/5 transition-all duration-300">
+                <span>Explore features</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- GSAP (safe to load again if already present from the hero) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof gsap === 'undefined') return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]nomotion/.test(window.location.search)) return;
+
+    const b3 = document.getElementById('food-suite-banner-3');
+    const b4 = document.getElementById('food-suite-banner-4');
+    const b5 = document.getElementById('food-suite-banner-5');
+    const b6 = document.getElementById('food-suite-banner-6');
+
+    // Gentle up/down float (out of phase), same feel as the hero banners
+    if (b3) gsap.to(b3, { y: '-=10', duration: 2.5, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 0.2 });
+    if (b4) gsap.to(b4, { y: '-=10', duration: 2.4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    if (b5) gsap.to(b5, { y: '-=10', duration: 2.8, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 0.4 });
+    if (b6) gsap.to(b6, { y: '-=10', duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 0.7 });
+});
+</script>

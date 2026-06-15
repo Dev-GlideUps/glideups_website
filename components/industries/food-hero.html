@@ -1,66 +1,115 @@
 <!-- Food Delivery Hero Section -->
-<section class="relative flex items-center pt-24 pb-16 lg:pt-32 lg:pb-20">
-    <!-- Background Image with Dark Overlay -->
+<section class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24">
+    <!-- Background Image with Gradient Overlay -->
     <div class="absolute inset-0 w-full h-full z-0">
-        <img src="assets/food/hero-bg.svg" alt="" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black/40"></div>
+        <img src="assets/food/hero_bg.png" alt="" class="absolute inset-0 w-full h-full object-cover">
+        <!-- White gradient: solid on the left for legibility, fading to reveal food on the right -->
+        <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.78) 35%, rgba(255,255,255,0.45) 62%, rgba(255,255,255,0.15) 100%);"></div>
     </div>
 
     <!-- Hero Content -->
-    <div class="container mx-auto px-4 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <!-- Left Content -->
-            <div class="max-w-[500px]">
+    <div class="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <!-- ===================== LEFT CONTENT ===================== -->
+            <div class="max-w-xl">
+                <!-- Badge -->
+                <div id="food-hero-badge" class="inline-flex items-center gap-1.5 mb-6 bg-white px-3 py-1 rounded-full shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background:#FF6F00;"></span>
+                    <span class="text-xs font-semibold tracking-wide" style="color:#FF6F00;">Single-vendor food delivery, fully built</span>
+                </div>
+
                 <!-- Main Heading -->
-                <h1 id="food-hero-title" class="text-4xl lg:text-5xl xl:text-[56px] font-semibold leading-tight lg:leading-[68px] tracking-[-2px] text-white mb-6">
-                    Get Your Own Food Delivery App Clone
+                <h1 id="food-hero-title" class="text-4xl sm:text-5xl xl:text-[64px] font-bold leading-[1.05] tracking-[-2px] text-dark mb-6">
+                    Launch your<br class="hidden lg:inline">
+                    own <span style="color:#FF6F00;">food<br class="hidden lg:inline">delivery</span><br class="hidden lg:inline">
+                    business in<br class="hidden lg:inline">
+                    days, not<br class="hidden lg:inline">
+                    months.
                 </h1>
 
                 <!-- Description -->
-                <p id="food-hero-desc" class="text-base lg:text-lg leading-7 text-white/80 mb-8 max-w-[420px]">
-                    We uses the latest technological methods to improve a business's image. Our services aim to give your brand that competitive edge that it needs to outshine in the competition – allowing you to be a step ahead.
+                <p id="food-hero-desc" class="text-xs lg:text-sm leading-6 text-dark/70 mb-8 max-w-[440px]">
+                    Yummy is a complete production-ready platform &mdash; Customer apps for iOS, Android &amp; Web, a powerful Admin Panel, and a Rider app. Buy the source code once, customize, and go live.
                 </p>
 
                 <!-- CTA Buttons -->
-                <div class="flex flex-wrap gap-4">
-                    <!-- Schedule Meeting Button - Orange -->
-                    <a href="#contact-section" class="food-hero-cta inline-flex items-center gap-2 px-6 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg" style="background-color: #F5A623; color: white;">
+                <div class="flex flex-wrap items-center gap-4 mb-12">
+                    <!-- Get a Demo - Orange -->
+                    <a href="#contact-section" class="food-hero-cta inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl" style="background:#FF6F00;">
+                        <span>Get a Demo</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
-                        <span class="font-semibold">Schedule a Meeting</span>
                     </a>
 
-                    <!-- WhatsApp Button - White with Green Border -->
-                    <a href="https://wa.me/923032298414" target="_blank" class="food-hero-cta inline-flex items-center gap-2 px-6 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg" style="background-color: white; color: #25D366; border: 2px solid #25D366;">
-                        <svg class="w-5 h-5" fill="#25D366" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    <!-- View Live Demo - Outline button with play icon -->
+                    <a href="#demo" class="food-hero-cta inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-dark border border-dark/25 hover:border-dark/40 hover:bg-dark/5 transition-all duration-300">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
                         </svg>
-                        <span class="font-semibold">Message on Whatsapp</span>
+                        <span>View Live Demo</span>
                     </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 gap-x-10 gap-y-6 max-w-[440px]">
+                    <div class="food-hero-stat">
+                        <div class="text-3xl lg:text-4xl font-bold text-dark leading-none">4 apps</div>
+                        <div class="text-sm text-dark/55 mt-2">iOS &middot; Android &middot; Web &middot; Admin</div>
+                    </div>
+                    <div class="food-hero-stat">
+                        <div class="text-3xl lg:text-4xl font-bold text-dark leading-none">100%</div>
+                        <div class="text-sm text-dark/55 mt-2">Source code included</div>
+                    </div>
+                    <div class="food-hero-stat">
+                        <div class="text-3xl lg:text-4xl font-bold text-dark leading-none">Flutter</div>
+                        <div class="text-sm text-dark/55 mt-2">Cross-platform from one codebase</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right - Phone Mockup -->
-            <div class="flex justify-center lg:justify-end lg:pr-8 xl:pr-16">
-                <div class="relative">
-                    <!-- Orange Oval Shadow at Bottom - Using SVG (Behind phone) -->
-                    <img
-                        src="assets/food/Ellipse 2.svg"
-                        alt=""
-                        class="absolute bottom-0 left-1/3 w-[380px] lg:w-[580px] h-auto"
-                        style="transform: translateX(-50%) translateY(20px);"
-                    >
+            <!-- ===================== RIGHT - PHONES ===================== -->
+            <!-- max-w sized so two equal-width phones overlap ~20% (left/right anchored) -->
+            <div class="relative w-full max-w-[425px] sm:max-w-[488px] lg:max-w-[562px] mx-auto lg:mx-0 lg:ml-auto h-[540px] sm:h-[600px] lg:h-[730px]">
+                <!-- Orange Glow Behind Phones -->
+                <div class="absolute right-12 top-1/2 -translate-y-1/2 w-[320px] h-[320px] lg:w-[420px] lg:h-[420px] rounded-full blur-3xl opacity-40" style="background:#FF6F00;"></div>
 
-                    <!-- Phone Mockup Image (On top of shadow) -->
-                    <div id="food-hero-phone" class="phone-mockup relative" style="transform: rotate(6deg);">
-                        <img
-                            src="assets/food/hero-modal.svg"
-                            alt="Food Delivery App"
-                            class="w-[220px] lg:w-[280px] h-auto"
-                            style="filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));"
-                        >
-                    </div>
+                <!-- ===== Phone 2 group: Orange Menu Phone + its banner (right, higher, BACK) ===== -->
+                <div class="absolute top-0 right-0 w-[245px] sm:w-[285px] lg:w-[340px] z-10">
+                    <img
+                        id="food-phone-2"
+                        src="assets/food/food_device2.png"
+                        alt="Food ordering app menu screen"
+                        class="w-full h-auto"
+                        style="filter: drop-shadow(0 25px 50px rgba(0,0,0,0.40));"
+                    >
+                    <!-- Banner 2 - Rider Assigned (attached to phone 2, lower, sticks out right) -->
+                    <img
+                        id="food-banner-2"
+                        src="assets/food/notification_banner2.png"
+                        alt="Rider assigned notification"
+                        class="absolute top-[70%] -right-3 sm:-right-4 lg:-right-6 w-[180px] sm:w-[200px] lg:w-[230px] h-auto z-30"
+                        style="filter: drop-shadow(0 15px 30px rgba(0,0,0,0.20));"
+                    >
+                </div>
+
+                <!-- ===== Phone 1 group: White Order-Tracking Phone + its banner (left, lower, FRONT) ===== -->
+                <div class="absolute top-8 left-0 w-[245px] sm:w-[285px] lg:w-[340px] z-20">
+                    <img
+                        id="food-phone-1"
+                        src="assets/food/food_device1.png"
+                        alt="Live order tracking screen"
+                        class="w-full h-auto"
+                        style="filter: drop-shadow(0 30px 60px rgba(0,0,0,0.45));"
+                    >
+                    <!-- Banner 1 - New Order (attached to phone 1, top, sticks out left) -->
+                    <img
+                        id="food-banner-1"
+                        src="assets/food/notification_banner1.png"
+                        alt="New order notification"
+                        class="absolute top-[6%] -left-4 sm:-left-5 lg:-left-8 w-[200px] sm:w-[225px] lg:w-[250px] h-auto z-30"
+                        style="filter: drop-shadow(0 15px 30px rgba(0,0,0,0.20));"
+                    >
                 </div>
             </div>
         </div>
@@ -69,70 +118,54 @@
 
 <!-- GSAP Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof gsap === 'undefined') return;
 
-    const title = document.getElementById('food-hero-title');
-    const desc = document.getElementById('food-hero-desc');
-    const ctaButtons = document.querySelectorAll('.food-hero-cta');
-    const phone = document.getElementById('food-hero-phone');
+    const badge   = document.getElementById('food-hero-badge');
+    const title   = document.getElementById('food-hero-title');
+    const desc    = document.getElementById('food-hero-desc');
+    const ctas    = document.querySelectorAll('.food-hero-cta');
+    const stats   = document.querySelectorAll('.food-hero-stat');
+    const phone1  = document.getElementById('food-phone-1');
+    const phone2  = document.getElementById('food-phone-2');
+    const banner1 = document.getElementById('food-banner-1');
+    const banner2 = document.getElementById('food-banner-2');
 
-    // Timeline for hero entrance
-    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    // Left-content elements only — phones/banners stay static (no animation)
+    const textTargets = [badge, title, desc, ...ctas, ...stats].filter(Boolean);
 
-    heroTl
-        .from(title, {
-            y: 60,
-            opacity: 0,
-            duration: 1
-        })
-        .from(desc, {
-            y: 40,
-            opacity: 0,
-            duration: 0.8
-        }, '-=0.6')
-        .from(ctaButtons, {
-            y: 30,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.15
-        }, '-=0.4')
-        .from(phone, {
-            x: 100,
-            opacity: 0,
-            duration: 1,
-            ease: 'back.out(1.2)'
-        }, '-=0.8');
+    // Respect reduced-motion (and allow ?nomotion for previews): show final layout, skip animation
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        || /[?&]nomotion/.test(window.location.search);
+    if (reduceMotion) return;
 
-    // Phone floating animation
-    if (phone) {
-        gsap.to(phone, {
-            y: -15,
-            duration: 3,
-            ease: 'sine.inOut',
-            yoyo: true,
-            repeat: -1
-        });
-    }
-
-    // Button hover effects
-    ctaButtons.forEach(btn => {
-        btn.addEventListener('mouseenter', () => {
-            gsap.to(btn, {
-                scale: 1.05,
-                duration: 0.3
-            });
-        });
-
-        btn.addEventListener('mouseleave', () => {
-            gsap.to(btn, {
-                scale: 1,
-                duration: 0.3
-            });
-        });
+    // Entrance timeline (text content only) — clears inline opacity/transform on finish
+    const tl = gsap.timeline({
+        defaults: { ease: 'power3.out' },
+        onComplete: function () {
+            gsap.set(textTargets, { clearProps: 'opacity,transform' });
+        }
     });
+    tl.from(badge, { y: 20, opacity: 0, duration: 0.6 })
+      .from(title, { y: 50, opacity: 0, duration: 0.9 }, '-=0.3')
+      .from(desc,  { y: 30, opacity: 0, duration: 0.7 }, '-=0.5')
+      .from(ctas,  { y: 25, opacity: 0, duration: 0.5, stagger: 0.12 }, '-=0.4')
+      .from(stats, { y: 20, opacity: 0, duration: 0.5, stagger: 0.12 }, '-=0.3');
+
+    // Gentle up/down float on the notification banners (phones stay static)
+    if (banner1) gsap.to(banner1, { y: '-=10', duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+    if (banner2) gsap.to(banner2, { y: '-=10', duration: 2.6, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 0.5 });
+
+    // FAILSAFE: native timer, independent of the GSAP ticker. If the timeline hasn't
+    // finished (background tab, throttled paint, etc.) force the final state so the
+    // content — especially the buttons — can never remain invisible.
+    setTimeout(function () {
+        if (tl.progress() < 1) {
+            tl.progress(1);
+        }
+        gsap.set(textTargets, { clearProps: 'opacity' });
+    }, 3000);
 });
 </script>

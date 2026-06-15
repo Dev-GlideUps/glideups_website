@@ -2,7 +2,9 @@
 RewriteEngine On
 
 # Set the base directory
-RewriteBase /
+# NOTE: Left unset so the rules work both at the domain root (production)
+# and inside an XAMPP subfolder like /glideups_website/ (local dev).
+# RewriteBase /
 
 # Remove index.php and index from URLs
 # example.com/index.php → example.com/
