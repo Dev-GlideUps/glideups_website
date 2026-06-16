@@ -1,0 +1,72 @@
+<!-- Food Delivery - Scroll animations (reveal + count-up) -->
+<style>
+    .food-reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+    .food-reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+        .food-reveal { opacity: 1 !important; transform: none !important; transition: none; }
+    }
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Reveal-on-scroll (every section's content, hero excluded — it has no aria-label) ---------- */
+    var blocks = Array.prototype.slice.call(document.querySelectorAll('section[aria-label] > .container > *:not([data-no-reveal])'));
+    blocks.forEach(function (el) { el.classList.add('food-reveal'); });
+
+    if (reduce) {
+        blocks.forEach(function (el) { el.classList.add('is-visible'); });
+    } else {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                var el = e.target;
+                var sibs = el.parentNode.children;
+                var idx = Array.prototype.indexOf.call(sibs, el);
+                el.style.transitionDelay = (Math.min(idx, 4) * 90) + 'ms';
+                el.classList.add('is-visible');
+                revealObs.unobserve(el);
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -7% 0px' });
+        blocks.forEach(function (el) { revealObs.observe(el); });
+    }
+
+    /* ---------- Count-up for stat numbers ---------- */
+    var counters = Array.prototype.slice.call(document.querySelectorAll('.food-counter'));
+    function runCount(el) {
+        var text = (el.getAttribute('data-cv') || el.textContent).trim();
+        el.setAttribute('data-cv', text);
+        var m = text.match(/^([^0-9]*)([\d.,]+)(.*)$/);
+        if (!m) return; // non-numeric (e.g. "Talk to us", "Flutter + React") — leave untouched
+        var prefix = m[1], rawNum = m[2], suffix = m[3];
+        var hasComma = rawNum.indexOf(',') > -1;
+        var decimals = (rawNum.split('.')[1] || '').length;
+        var target = parseFloat(rawNum.replace(/,/g, ''));
+        var dur = 1300, t0 = null;
+        function fmt(v) {
+            var n = decimals ? v.toFixed(decimals) : Math.round(v);
+            if (hasComma) n = Number(n).toLocaleString('en-US');
+            return prefix + n + suffix;
+        }
+        function step(ts) {
+            if (!t0) t0 = ts;
+            var p = Math.min((ts - t0) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = fmt(target * eased);
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = prefix + rawNum + suffix; // restore exact original
+        }
+        requestAnimationFrame(step);
+    }
+    if (!reduce && counters.length) {
+        var countObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                runCount(e.target);
+                countObs.unobserve(e.target);
+            });
+        }, { threshold: 0.6 });
+        counters.forEach(function (el) { countObs.observe(el); });
+    }
+});
+</script>

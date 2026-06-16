@@ -301,6 +301,9 @@
     <!-- Go Live (contact CTA) -->
     <?php include '../components/industries/food-golive.html'; ?>
 
+    <!-- Scroll animations (reveal + count-up) -->
+    <?php include '../components/industries/food-animations.html'; ?>
+
 
     <!-- Footer -->
     <?php include '../components/footer.html'; ?>

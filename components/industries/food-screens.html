@@ -14,35 +14,35 @@
         </div>
 
         <!-- ===== Tabs (segmented control) ===== -->
-        <div class="flex justify-center mt-8">
-            <div class="inline-flex flex-wrap items-center justify-center gap-1 p-1.5 rounded-xl bg-white border border-dark/10 shadow-sm">
-                <button type="button" data-screens-tab="customer" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Customer App</button>
-                <button type="button" data-screens-tab="rider" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Rider App</button>
-                <button type="button" data-screens-tab="admin" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Admin Panel</button>
-                <button type="button" data-screens-tab="web" class="screens-tab px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200">Web App</button>
+        <div class="mt-8">
+            <div class="screens-tabs mx-auto rounded-xl bg-white border border-dark/10 shadow-sm">
+                <button type="button" data-screens-tab="customer" class="screens-tab rounded-lg font-semibold whitespace-nowrap text-center transition-all duration-200">Customer App</button>
+                <button type="button" data-screens-tab="rider" class="screens-tab rounded-lg font-semibold whitespace-nowrap text-center transition-all duration-200">Rider App</button>
+                <button type="button" data-screens-tab="admin" class="screens-tab rounded-lg font-semibold whitespace-nowrap text-center transition-all duration-200">Admin Panel</button>
+                <button type="button" data-screens-tab="web" class="screens-tab rounded-lg font-semibold whitespace-nowrap text-center transition-all duration-200">Web App</button>
             </div>
         </div>
 
         <!-- ===== Tab panels ===== -->
-        <div class="mt-12 lg:mt-14">
+        <div id="screens-panels" data-no-reveal class="mt-12 lg:mt-14">
 
             <!-- Customer App -->
             <div data-screens-panel="customer" class="screens-panel flex flex-wrap justify-center items-end gap-0">
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device9.png" alt="Browse menu screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Browse menu</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Browse menu</figcaption>
                 </figure>
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device10.png" alt="Item details screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Item details</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Item details</figcaption>
                 </figure>
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device11.png" alt="Active orders screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Active orders</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Active orders</figcaption>
                 </figure>
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device12.png" alt="Order timeline screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Order timeline</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Order timeline</figcaption>
                 </figure>
             </div>
 
@@ -50,19 +50,19 @@
             <div data-screens-panel="rider" class="screens-panel hidden flex-wrap justify-center items-end gap-0">
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device4.png" alt="Rider dashboard screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Rider dashboard</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Rider dashboard</figcaption>
                 </figure>
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device11.png" alt="Assigned orders screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Assigned orders</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Assigned orders</figcaption>
                 </figure>
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device12.png" alt="Order timeline screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Order timeline</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Order timeline</figcaption>
                 </figure>
                 <figure class="w-[50%] sm:w-[34%] lg:w-[25%] max-w-[290px] -mx-1 sm:-mx-2 lg:-mx-3">
                     <img src="assets/food/food_device1.png" alt="Live tracking screen" class="w-full h-auto" style="filter:drop-shadow(0 22px 45px rgba(0,0,0,0.14));">
-                    <figcaption class="text-center text-xs text-dark/50 -mt-9">Live tracking</figcaption>
+                    <figcaption class="text-center text-xs text-dark/50 -mt-2 sm:-mt-9">Live tracking</figcaption>
                 </figure>
             </div>
 
@@ -85,36 +85,71 @@
     </div>
 </section>
 
+<style>
+    /* Segmented tabs: inline (content width) on desktop, 4 equal columns filling the row on mobile */
+    .screens-tabs { display: flex; width: -moz-fit-content; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; align-items: center; gap: 4px; padding: 6px; }
+    .screens-tabs .screens-tab { padding: 10px 20px; font-size: 14px; line-height: 1.2; }
+    @media (max-width: 639px) {
+        .screens-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; gap: 2px; padding: 4px; }
+        .screens-tabs .screens-tab { padding: 8px 2px; font-size: 10px; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+    }
+    #screens-panels figure { opacity: 0; transform: translateX(52px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+    #screens-panels figure.slid-in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { #screens-panels figure { opacity: 1; transform: none; transition: none; } }
+</style>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var tabs = Array.prototype.slice.call(document.querySelectorAll('.screens-tab'));
     var panels = Array.prototype.slice.call(document.querySelectorAll('.screens-panel'));
+    var wrap = document.getElementById('screens-panels');
     if (!tabs.length) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var activeKey = 'customer';
+    var revealed = false;
 
-    function setActive(key) {
+    // Slide each screen in from the right (staggered left-to-right)
+    function animatePanel(panel) {
+        if (!panel || reduce) return;
+        var figs = Array.prototype.slice.call(panel.querySelectorAll('figure'));
+        figs.forEach(function (f) { f.classList.remove('slid-in'); f.style.transitionDelay = '0ms'; });
+        void panel.offsetWidth; // reflow so the re-add animates
+        figs.forEach(function (f, i) { f.style.transitionDelay = (i * 110) + 'ms'; f.classList.add('slid-in'); });
+    }
+
+    function setActive(key, animate) {
+        activeKey = key;
         tabs.forEach(function (t) {
             var active = t.getAttribute('data-screens-tab') === key;
-            if (active) {
-                t.style.background = '#FF6F00';
-                t.style.color = '#ffffff';
-                t.style.boxShadow = '0 6px 16px rgba(255,111,0,0.25)';
-            } else {
-                t.style.background = 'transparent';
-                t.style.color = 'rgba(20,20,20,0.7)';
-                t.style.boxShadow = 'none';
-            }
+            t.style.background = active ? '#FF6F00' : 'transparent';
+            t.style.color = active ? '#ffffff' : 'rgba(20,20,20,0.7)';
+            t.style.boxShadow = active ? '0 6px 16px rgba(255,111,0,0.25)' : 'none';
         });
+        var shown = null;
         panels.forEach(function (p) {
             var match = p.getAttribute('data-screens-panel') === key;
-            // panels use flex; toggle 'hidden' and restore 'flex' when shown
             p.classList.toggle('hidden', !match);
             p.classList.toggle('flex', match);
+            if (match) shown = p;
         });
+        if (animate) animatePanel(shown);
     }
 
     tabs.forEach(function (t) {
-        t.addEventListener('click', function () { setActive(t.getAttribute('data-screens-tab')); });
+        t.addEventListener('click', function () { setActive(t.getAttribute('data-screens-tab'), revealed); });
     });
-    setActive('customer');
+    setActive('customer', false);
+
+    // Trigger the slide-in once the panel scrolls into view
+    if (!reduce && wrap) {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+                if (!e.isIntersecting || revealed) return;
+                revealed = true;
+                animatePanel(document.querySelector('[data-screens-panel="' + activeKey + '"]'));
+                io.disconnect();
+            });
+        }, { threshold: 0.2 });
+        io.observe(wrap);
+    }
 });
 </script>
