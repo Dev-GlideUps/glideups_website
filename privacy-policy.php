@@ -116,6 +116,7 @@
                             <li><a href="#children" class="hover:text-primary transition-colors">10. Children's Privacy</a></li>
                             <li><a href="#changes" class="hover:text-primary transition-colors">11. Changes to This Policy</a></li>
                             <li><a href="#contact" class="hover:text-primary transition-colors">12. Contact Us</a></li>
+                            <li><a href="#games" class="hover:text-primary transition-colors">13. GlideUps Games</a></li>
                         </ul>
                     </div>
                 </aside>
@@ -194,6 +195,71 @@
                         <p class="mb-2"><strong class="text-dark">GlideUps</strong></p>
                         <p class="mb-2">Email: <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a></p>
                         <p class="mb-0">Phone / WhatsApp: <a href="tel:+923032298414">+92 303 2298414</a></p>
+                    </div>
+
+                    <h2 id="games">13. GlideUps Games (Mobile Games)</h2>
+                    <p>This section applies to all mobile games published by GlideUps on Google Play and other app stores, including Clay Star and any games we release in the future. If a game needs extra rules, we will list them in the game's own sub-section below.</p>
+                    <p class="text-sm">Last updated: November 14, 2026</p>
+
+                    <h3>What stays on your device</h3>
+                    <p>Our games save your score, coins, unlocked items, daily rewards and settings on your device. We do not ask you to create an account, and the games do not collect your name, email address or phone number.</p>
+
+                    <h3>Ads</h3>
+                    <p>Our games are free to play and show ads through Google AdMob. These can be banner ads, full-screen ads between rounds, and rewarded ads that you can choose to watch for a bonus.</p>
+                    <p>To show and measure ads, Google AdMob may collect and use:</p>
+                    <ul>
+                        <li>Your device's advertising ID and other device identifiers</li>
+                        <li>Your approximate location, worked out from your IP address</li>
+                        <li>How you interact with the app and the ads</li>
+                        <li>Crash logs and diagnostic information</li>
+                    </ul>
+                    <p>This data is handled by Google under its own policies. We do not control it. Learn more:</p>
+                    <ul>
+                        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                        <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses data from apps that use its services</a></li>
+                    </ul>
+
+                    <h3>Your choices</h3>
+                    <ul>
+                        <li><strong>Consent:</strong> If you are in the European Economic Area or the United Kingdom, the game shows a consent form from Google before ads load. You can change your choice at any time in the game under Settings &gt; Privacy &amp; ad choices.</li>
+                        <li><strong>Advertising ID:</strong> On Android you can reset or delete your advertising ID, and turn off ad personalization, in your phone's Settings &gt; Google &gt; Ads.</li>
+                    </ul>
+
+                    <h3>In-app purchases</h3>
+                    <p>Some games may offer optional purchases, such as removing ads. Payments are handled by Google Play. We do not see or store your payment details.</p>
+
+                    <h3>Children</h3>
+                    <p>Our games are not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has given us personal information, contact us and we will delete it.</p>
+
+                    <h3>Deleting your data</h3>
+                    <p>Data saved inside a game is removed when you uninstall the game. If you want to ask about any data connected to you, email us at <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a> and we will respond as soon as we can.</p>
+
+                    <h3>Changes</h3>
+                    <p>If we add new features or services to a game that change how data is used, we will update this section and the "Last updated" date. Please check this page from time to time.</p>
+
+                    <h3>Contact</h3>
+                    <p>GlideUps<br>
+                    Email: <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a><br>
+                    Website: <a href="https://glideups.com" target="_blank" rel="noopener noreferrer">https://glideups.com</a></p>
+
+                    <h3>Game list</h3>
+                    <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-4">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-gray-light text-dark">
+                                <tr>
+                                    <th class="px-4 py-3 font-semibold">Game</th>
+                                    <th class="px-4 py-3 font-semibold">Platform</th>
+                                    <th class="px-4 py-3 font-semibold">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[#555]">
+                                <tr class="border-t border-gray-200">
+                                    <td class="px-4 py-3 font-medium text-dark">Clay Star</td>
+                                    <td class="px-4 py-3">Android</td>
+                                    <td class="px-4 py-3">Ads through Google AdMob. No account.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </article>
             </div>
