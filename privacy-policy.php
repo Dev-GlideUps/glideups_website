@@ -77,7 +77,7 @@
     <!-- Navigation Bar -->
     <?php include 'components/navbar.html'; ?>
 
-    <?php $lastUpdated = 'November 14, 2026'; ?>
+    <?php $lastUpdated = 'November 20, 2026'; ?>
 
     <!-- Hero -->
     <section class="bg-dark text-white pt-36 pb-16 lg:pt-44 lg:pb-20 relative overflow-hidden">
@@ -184,7 +184,7 @@
                     <p>Our website may contain links to third-party websites and platforms such as LinkedIn, Instagram, YouTube and WhatsApp. We are not responsible for the privacy practices of those sites, and we encourage you to read their privacy policies.</p>
 
                     <h2 id="children">10. Children's Privacy</h2>
-                    <p>Our website and services are not directed to children under 13, and we do not knowingly collect personal information from children. If you believe a child has given us personal information, please contact us and we will delete it.</p>
+                    <p>Our website is not directed to children under 13, and we do not knowingly collect personal information from children through the website. Some of our mobile games are made for players of all ages, including children. Those games follow the rules in <a href="#games">Section 13</a>, including child-directed ads and no collection of contact details. If you believe a child has given us personal information, please contact us and we will delete it.</p>
 
                     <h2 id="changes">11. Changes to This Policy</h2>
                     <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date.</p>
@@ -198,49 +198,36 @@
                     </div>
 
                     <h2 id="games">13. GlideUps Games (Mobile Games)</h2>
-                    <p>This section applies to all mobile games published by GlideUps on Google Play and other app stores, including Clay Star and any games we release in the future. If a game needs extra rules, we will list them in the game's own sub-section below.</p>
-                    <p class="text-sm">Last updated: November 14, 2026</p>
-
-                    <h3>What stays on your device</h3>
-                    <p>Our games save your score, coins, unlocked items, daily rewards and settings on your device. We do not ask you to create an account, and the games do not collect your name, email address or phone number.</p>
+                    <p>This section applies to the mobile games published by GlideUps on Google Play and other app stores, including Clay Star. If a game has extra rules, they are listed in its own sub-section below.</p>
+                    <p class="text-sm">Last updated: November 20, 2026</p>
 
                     <h3>Ads</h3>
-                    <p>Our games are free to play and show ads through Google AdMob. These can be banner ads, full-screen ads between rounds, and rewarded ads that you can choose to watch for a bonus.</p>
-                    <p>To show and measure ads, Google AdMob may collect and use:</p>
-                    <ul>
-                        <li>Your device's advertising ID and other device identifiers</li>
-                        <li>Your approximate location, worked out from your IP address</li>
-                        <li>How you interact with the app and the ads</li>
-                        <li>Crash logs and diagnostic information</li>
-                    </ul>
-                    <p>This data is handled by Google under its own policies. We do not control it. Learn more:</p>
+                    <p>Our games are free to play and show ads through Google AdMob. Where a game is played by children, we set every ad request as child-directed. This means no personalised ads, and only ads rated for general audiences. We do not use the advertising ID in these games.</p>
+                    <p>To show and measure ads, Google AdMob may receive your IP address, device information and how you interact with the ads. Google handles this data under its own policies, and we do not control it.</p>
                     <ul>
                         <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
                         <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses data from apps that use its services</a></li>
                     </ul>
 
-                    <h3>Your choices</h3>
-                    <ul>
-                        <li><strong>Consent:</strong> If you are in the European Economic Area or the United Kingdom, the game shows a consent form from Google before ads load. You can change your choice at any time in the game under Settings &gt; Privacy &amp; ad choices.</li>
-                        <li><strong>Advertising ID:</strong> On Android you can reset or delete your advertising ID, and turn off ad personalization, in your phone's Settings &gt; Google &gt; Ads.</li>
-                    </ul>
-
-                    <h3>In-app purchases</h3>
-                    <p>Some games may offer optional purchases, such as removing ads. Payments are handled by Google Play. We do not see or store your payment details.</p>
-
                     <h3>Children</h3>
-                    <p>Our games are not directed to children under 13. We do not knowingly collect personal information from children. If you believe a child has given us personal information, contact us and we will delete it.</p>
+                    <p>Some of our games are made for players of all ages, including children. We do not ask children for their name, email address, phone number, exact location or any other contact details. We do not show children personalised ads.</p>
+                    <p>Parents and guardians can contact us at <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a> to ask what data is held about their child, or to ask us to delete it. We will respond as soon as we can.</p>
 
                     <h3>Deleting your data</h3>
-                    <p>Data saved inside a game is removed when you uninstall the game. If you want to ask about any data connected to you, email us at <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a> and we will respond as soon as we can.</p>
+                    <p>Data saved on your device is removed when you uninstall the game. Data stored online (see below for each game) can be deleted on request by emailing <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a>.</p>
 
                     <h3>Changes</h3>
-                    <p>If we add new features or services to a game that change how data is used, we will update this section and the "Last updated" date. Please check this page from time to time.</p>
+                    <p>If we add new features that change how data is used, we will update this section and the "Last updated" date.</p>
 
-                    <h3>Contact</h3>
-                    <p>GlideUps<br>
-                    Email: <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a><br>
-                    Website: <a href="https://glideups.com" target="_blank" rel="noopener noreferrer">https://glideups.com</a></p>
+                    <h3 id="clay-star">13.1 Clay Star (Android)</h3>
+                    <p><strong>No account.</strong> You do not need to create an account or sign in. We do not ask for your email, phone number or real name.</p>
+                    <p><strong>Saved on your device.</strong> Your score, coins, unlocked outfits and trails, daily gift progress and settings are stored on your device.</p>
+                    <p><strong>Analytics (Firebase).</strong> We use Google Firebase Analytics to understand how the game is used and to fix problems. This includes app interactions (such as which screens are used), diagnostic information, and a Firebase installation ID. This data is not linked to your identity and is not used for advertising. We do not use Google signals and we do not link this data to Google Ads.</p>
+                    <p><strong>Leaderboard (from version 1.1).</strong> If you join the leaderboard, you can type a nickname (3 to 12 letters, filtered) that other players can see. We also store your best score, your progress, your country and an anonymous Firebase user ID. The country comes from your phone's region setting, and you can change it. We do not collect your location. Please do not use your real name as a nickname.</p>
+                    <p><strong>Security and sharing.</strong> Data is encrypted in transit. We do not sell this data and we do not share it for advertising. It is processed by Google Firebase for us.</p>
+                    <p><strong>Ads.</strong> Clay Star shows banner ads and rewarded ads that you can choose to watch to continue a run. All ad requests are child-directed, as described above.</p>
+                    <p><strong>Purchases.</strong> Clay Star currently has no in-app purchases.</p>
+                    <p><strong>Contact.</strong> <a href="mailto:glideups.official@gmail.com">glideups.official@gmail.com</a></p>
 
                     <h3>Game list</h3>
                     <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-4">
@@ -249,14 +236,14 @@
                                 <tr>
                                     <th class="px-4 py-3 font-semibold">Game</th>
                                     <th class="px-4 py-3 font-semibold">Platform</th>
-                                    <th class="px-4 py-3 font-semibold">Notes</th>
+                                    <th class="px-4 py-3 font-semibold">Data summary</th>
                                 </tr>
                             </thead>
                             <tbody class="text-[#555]">
                                 <tr class="border-t border-gray-200">
                                     <td class="px-4 py-3 font-medium text-dark">Clay Star</td>
                                     <td class="px-4 py-3">Android</td>
-                                    <td class="px-4 py-3">Ads through Google AdMob. No account.</td>
+                                    <td class="px-4 py-3">No account. Firebase Analytics, a leaderboard with a filtered nickname, and child-directed ads through Google AdMob.</td>
                                 </tr>
                             </tbody>
                         </table>
